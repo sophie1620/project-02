@@ -13,27 +13,75 @@
 //Append Array result from if/else statement to page 
 
 
+// const weatherApp = {}
+
+// weatherApp.apiURL
+// weatherApp.apiKey = '89Q5FZNA5A9RSN7FCW3A6F2NZ';
+
+
+// weatherApp.button = document.querySelector('button');
+
+// weatherApp.button.addEventListener('click', function () {
+//      weatherApp.userLocation = document.querySelector('input').value;
+//      console.log(weatherApp.userLocation);
+
+//      fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${weatherApp.userLocation}?unitGroup=metric&key=${weatherApp.apiKey}`, {
+//           method: "GET",
+//           headers: {
+//           }
+//      })
+//           .then((response) => {
+//                return response.json();
+//           })
+//           .then((jsonResponse) => {
+//                console.log(jsonResponse);
+//           })
+// })
+
 const weatherApp = {}
 
-weatherApp.apiURL
+weatherApp.apiURL = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/`
 weatherApp.apiKey = '89Q5FZNA5A9RSN7FCW3A6F2NZ';
 
 
 weatherApp.button = document.querySelector('button');
+// weatherApp.userLocation = document.querySelector('input').value;
+weatherApp.userInput = document.querySelector('input');
+// weatherApp.userLocation= weatherApp.userInput.value;
 
-weatherApp.button.addEventListener('click', function () {
-     weatherApp.userLocation = document.querySelector('input').value;
+weatherApp.init = function(){
+     //add in event listener here- store event listener inside a function weatherapp.eventlistener()
+}
+
+//create event listener to pull user input value 
+//pass user input value into the getWeather function to target user input location
+weatherApp.button.addEventListener('click',function (){
+     weatherApp.userLocation = weatherApp.userInput.value;
      console.log(weatherApp.userLocation);
+     weatherApp.getWeather(weatherApp.userLocation);
+     weatherApp.userInput.value = "";
+})
 
-     fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${weatherApp.userLocation}?unitGroup=metric&key=${weatherApp.apiKey}`, {
+//pass user input location in as parameter
+//build out new URL to make api call    
+weatherApp.getWeather = function(parameter){
+     const url = new URL(weatherApp.apiURL + parameter);
+     url.search = new URLSearchParams({
+          unitGroup: "metric",
+          key: weatherApp.apiKey,
           method: "GET",
-          headers: {
-          }
+          headers:{}
      })
+     //api call
+     fetch(url)
           .then((response) => {
                return response.json();
           })
+          //parse into json
           .then((jsonResponse) => {
                console.log(jsonResponse);
           })
-})
+}
+
+//call init function
+weatherApp.init();
