@@ -171,6 +171,10 @@ weatherApp.displayClothing = function(temperature) {
      }
 }
 
+// append the displayClothing to index.html via innerHtml
+
+// append weatherForecast
+     // add to displayWeather function to target all other keys/values
 
 //call init function
 weatherApp.init();
