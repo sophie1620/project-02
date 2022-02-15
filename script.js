@@ -133,13 +133,50 @@ weatherApp.getWeather = function(parameter){
      //parse into json
      .then((jsonResponse) => {
           console.log(jsonResponse);
-          weatherApp.displayWeather(jsonResponse);
+          weatherApp.displayWeather(jsonResponse.currentConditions);
      })
 }
 
 // we need to have weather be retrieved
 weatherApp.displayWeather = function(weatherData) {
-     const feelsLike = weatherData.currentConditions.feelslike;
+     console.log(weatherData);
+     //store all weather object values inside variables:
+     const feelsLike= weatherData.feelslike;
+     
+     //create method to choose the if/else icons --> call that method into the displayWeather
+          //pass feelsLike as argument into displayClothing 
+     //append icon into forecastCondition
+     //append feelsLike inside the forecastCondition
+
+
+
+     const conditionsObject ={
+          temperature : weatherData.temp,
+          wind : weatherData.windspeed,
+          windGust : weatherData.windgust,
+          precipitation : weatherData.precip,
+          sunrise : weatherData.sunrise,
+          sunset : weatherData.sunset
+     }
+
+     //for each item in conditionsObject, create an li and store variable inside it
+     const ulElement = document.querySelector('.additionalInfo');
+     ulElement.innerHTML="";
+     for(const key in conditionsObject ){
+          const listElement = document.createElement('li');
+          listElement.textContent =`${key}: ${conditionsObject[key]}`;
+          ulElement.append(listElement);
+     }
+
+
+
+
+
+
+
+
+
+
      weatherApp.displayClothing(feelsLike);
 }
 
@@ -173,8 +210,7 @@ weatherApp.displayClothing = function(temperature) {
 
 // append the displayClothing to index.html via innerHtml
 
-// append weatherForecast
-     // add to displayWeather function to target all other keys/values
+
 
 //call init function
 weatherApp.init();
