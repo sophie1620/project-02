@@ -140,16 +140,23 @@ weatherApp.getWeather = function(parameter){
 // we need to have weather be retrieved
 weatherApp.displayWeather = function(weatherData) {
      console.log(weatherData);
-     //store all weather object values inside variables:
-     const feelsLike= weatherData.feelslike;
      
+     //select forecastConditions and store in variable
+     const forecastConditions = document.querySelector('.forecastCondition');
+     const forecastHeading = document.createElement('h2');
+     const feelsLike= weatherData.feelslike;
+     forecastHeading.textContent = `current temperature: ${feelsLike} degrees`;
+     
+     forecastConditions.appendChild(forecastHeading);
+
+
      //create method to choose the if/else icons --> call that method into the displayWeather
           //pass feelsLike as argument into displayClothing 
      //append icon into forecastCondition
      //append feelsLike inside the forecastCondition
 
 
-
+     //store all weather object values inside variables:
      const conditionsObject ={
           temperature : weatherData.temp,
           wind : weatherData.windspeed,
@@ -168,20 +175,17 @@ weatherApp.displayWeather = function(weatherData) {
           ulElement.append(listElement);
      }
 
-
-
-
-
-
-
-
-
-
      weatherApp.displayClothing(feelsLike);
 }
 
 // we need to focus on the .currentConditions.feelslike 
-// we need to identify the current temperater and then match it to the right object-array in the runningAttire array
+// we need to identify the current temperature and then match it to the right object-array in the runningAttire array
+     //store temperature blocks into variables (extremeCold = runningAttire[0].clothing)
+          // attach .forEach() to variable and:
+               //create li --> text content = item in array
+     
+     //OR do we create a method to store the forEach method inside- then call it inside each if/else statement
+
 weatherApp.displayClothing = function(temperature) {
      if(temperature < -10) {
           // console.log(`WAH! COLD! BRR!`);
