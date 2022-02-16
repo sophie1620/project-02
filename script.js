@@ -92,10 +92,9 @@ weatherApp.apiURL = `https://weather.visualcrossing.com/VisualCrossingWebService
 weatherApp.apiKey = '89Q5FZNA5A9RSN7FCW3A6F2NZ';
 
 
-weatherApp.button = document.querySelector('button');
-// weatherApp.userLocation = document.querySelector('input').value;
+weatherApp.form = document.querySelector('form');
 weatherApp.userInput = document.querySelector('input');
-// weatherApp.userLocation= weatherApp.userInput.value;
+
 
 weatherApp.init = function(){
      //add in event listener here- store event listener inside a function weatherapp.eventlistener()
@@ -106,7 +105,8 @@ weatherApp.init = function(){
 const eventListener = function() {
      //create event listener to pull user input value 
      //pass user input value into the getWeather function to target user input location
-     weatherApp.button.addEventListener('click',function (){
+     weatherApp.form.addEventListener('submit',function(e){
+          e.preventDefault();
           weatherApp.userLocation = weatherApp.userInput.value;
           // console.log(weatherApp.userLocation);
           weatherApp.getWeather(weatherApp.userLocation);
@@ -128,14 +128,35 @@ weatherApp.getWeather = function(parameter){
      //api call
      fetch(url)
      .then((response) => {
-          return response.json();
+          //error handling for if the api call did not work or user input was bad
+          if(response.ok || response.status === 200){
+               return response.json();
+          } else {
+               throw new Error ("This city doesn't exist! Please try again") ;    
+          }      
      })
      //parse into json
      .then((jsonResponse) => {
-          // console.log(jsonResponse);
+          weatherApp.displayLocation(jsonResponse.resolvedAddress);
           weatherApp.displayWeather(jsonResponse.currentConditions);
      })
+     .catch((err) => {
+          alert(err);
+     })
 } //end of API call
+
+
+//put the location/address of api call on page (for user to know the location is correct)
+weatherApp.displayLocation = function(locationData){
+     const location = document.querySelector('.location h3');
+     location.textContent = "";
+     location.textContent = locationData;
+     
+     const locationError = document.querySelector('.location p');
+     locationError.textContent="";
+     locationError.textContent= "Not the right city? Try specifying your state/province or country as well";
+}
+
 
 // we need to have weather be retrieved
 weatherApp.displayWeather = function(weatherData) {

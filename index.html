@@ -17,28 +17,38 @@
 
     <main>
         <section class="whereToRun">
-            <label for="location">Where are you running?</label>
-            <input id="location" type="text" placeholder="Toronto">
-            <button type="submit">Check Your Forecast!</button>
+            <form action="">
+                <label for="location">Where are you running?</label>
+                <input id="location" type="text" placeholder="Toronto, ON">
+                <button type="submit">Check Your Forecast!</button>
+            </form>
+            
         </section>
         
-        <section class="results">
-            
-            <div class="currentConditions">
-                <div class="forecastCondition">
-                    <!-- image and feelsLike go here -->
+        <section class="response">
+            <div class="location">
+                <h3></h3>
+                <p></p>
+            </div>
+
+            <div class="results">
+                <div class="currentConditions">
+                    <div class="forecastCondition">
+                        <!-- image and feelsLike go here -->
+                    </div>
+                    <ul class="additionalInfo">
+                        <!-- more weather info goes here -->
+                    </ul>
+                
                 </div>
-                <ul class="additionalInfo">
-                    <!-- more weather info goes here -->
-                </ul>
-
+                
+                <div class="whatToWear">
+                    <ul class="clothingItems">
+                        <!-- clothing array goes here -->
+                    </ul>
+                </div>
             </div>
 
-            <div class="whatToWear">
-                <ul class="clothingItems">
-                    <!-- clothing array goes here -->
-                </ul>
-            </div>
 
         </section>
     </main>
