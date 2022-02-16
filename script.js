@@ -1,4 +1,4 @@
-//register with Visual Crossing for apiKey
+//register with Visual Crossing for apiKey 
 //Create namespace object called weatherApp
 //Create ARRAY to different Objects representing temperature blocks (with clothing key value properties inside)
 //Make init method and call it to kick things off
@@ -84,7 +84,7 @@ const runningAttire = [
           'runningShoes'
           ]
      }
-]
+] //end of runningAttire array
 
 const weatherApp = {}
 
@@ -108,11 +108,11 @@ const eventListener = function() {
      //pass user input value into the getWeather function to target user input location
      weatherApp.button.addEventListener('click',function (){
           weatherApp.userLocation = weatherApp.userInput.value;
-          console.log(weatherApp.userLocation);
+          // console.log(weatherApp.userLocation);
           weatherApp.getWeather(weatherApp.userLocation);
           weatherApp.userInput.value = "";
      })
-}
+} // end of event listener
 
 
 //pass user input location in as parameter
@@ -132,17 +132,19 @@ weatherApp.getWeather = function(parameter){
      })
      //parse into json
      .then((jsonResponse) => {
-          console.log(jsonResponse);
+          // console.log(jsonResponse);
           weatherApp.displayWeather(jsonResponse.currentConditions);
      })
-}
+} //end of API call
 
 // we need to have weather be retrieved
 weatherApp.displayWeather = function(weatherData) {
-     console.log(weatherData);
+     // console.log(weatherData);
      
      //select forecastConditions and store in variable
      const forecastConditions = document.querySelector('.forecastCondition');
+     forecastConditions.innerHTML = "";
+     //append feelsLike inside the forecastCondition
      const forecastHeading = document.createElement('h2');
      const feelsLike= weatherData.feelslike;
      forecastHeading.textContent = `current temperature: ${feelsLike} degrees`;
@@ -153,15 +155,14 @@ weatherApp.displayWeather = function(weatherData) {
      //create method to choose the if/else icons --> call that method into the displayWeather
           //pass feelsLike as argument into displayClothing 
      //append icon into forecastCondition
-     //append feelsLike inside the forecastCondition
 
 
      //store all weather object values inside variables:
      const conditionsObject ={
-          temperature : weatherData.temp,
-          wind : weatherData.windspeed,
-          windGust : weatherData.windgust,
-          precipitation : weatherData.precip,
+          temperature : `${weatherData.temp} degrees`,
+          wind : `${weatherData.windspeed} km/hr`,
+          windGust : `${weatherData.windgust} km//hr`,
+          precipitation : `${weatherData.precip} mm`,
           sunrise : weatherData.sunrise,
           sunset : weatherData.sunset
      }
@@ -176,41 +177,52 @@ weatherApp.displayWeather = function(weatherData) {
      }
 
      weatherApp.displayClothing(feelsLike);
-}
+} // end of displayWeather function
 
-// we need to focus on the .currentConditions.feelslike 
-// we need to identify the current temperature and then match it to the right object-array in the runningAttire array
-     //store temperature blocks into variables (extremeCold = runningAttire[0].clothing)
-          // attach .forEach() to variable and:
-               //create li --> text content = item in array
      
-     //OR do we create a method to store the forEach method inside- then call it inside each if/else statement
+//create a method to store the forEach method inside- then call it inside each if/else statement
+weatherApp.selectClothingList = function(parameter) {
+     const clothingItems = document.querySelector('.clothingItems');
+     clothingItems.innerHTML = "";
+
+     parameter.forEach(function(item) {
+          const listedItem = document.createElement('li');
+          listedItem.textContent = item;
+          clothingItems.append(listedItem);
+     }) 
+} //end of selectClothingList function
 
 weatherApp.displayClothing = function(temperature) {
      if(temperature < -10) {
           // console.log(`WAH! COLD! BRR!`);
-          console.log(runningAttire[0].clothing);
+          // console.log(runningAttire[0].clothing);
+          weatherApp.selectClothingList(runningAttire[0].clothing);
 
      } else if(temperature >= -10 && temperature < 0) {
           // console.log(`its alright..kinda cold`);
-          console.log(runningAttire[1].clothing);
+          // console.log(runningAttire[1].clothing);
+          weatherApp.selectClothingList(runningAttire[1].clothing);
 
      } else if(temperature >= 0 && temperature < 5) {
           // console.log(`i'm temperate`);
-          console.log(runningAttire[2].clothing);
+          // console.log(runningAttire[2].clothing);
+          weatherApp.selectClothingList(runningAttire[2].clothing);
 
      } else if(temperature >= 5 && temperature < 15) {
           // console.log(`it's warm out!`);
-          console.log(runningAttire[3].clothing);
+          // console.log(runningAttire[3].clothing);
+          weatherApp.selectClothingList(runningAttire[3].clothing);
 
      } else if(temperature >= 15 && temperature < 25) {
           // console.log(`it's getting hot in here!`);
-          console.log(runningAttire[4].clothing);
+          // console.log(runningAttire[4].clothing);
+          weatherApp.selectClothingList(runningAttire[4].clothing);
      } else {
           // console.log(`is it wise run outside?`);
-          console.log(runningAttire[5].clothing);
+          // console.log(runningAttire[5].clothing);
+          weatherApp.selectClothingList(runningAttire[5].clothing);
      }
-}
+} // end of displayClothing function
 
 // append the displayClothing to index.html via innerHtml
 
