@@ -290,6 +290,10 @@ h1 {
   position: relative;
 }
 
-.visuallyHide {
-  display: none;
+.errorHandling {
+  color: white;
+}
+
+.visuallyShow {
+  color: black;
 }

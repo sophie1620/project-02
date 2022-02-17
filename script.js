@@ -86,7 +86,17 @@ const runningAttire = [
      }
 ] //end of runningAttire array
 
+//create array for different weather icons to use
 
+const weatherIcons = [
+     '<img src="./assets/cloudy.svg">',
+     '<img src="./assets/moon.svg">',
+     '<img src="./assets/moonandcloud.svg">',
+     '<img src="./assets/rainy.svg">',
+     '<img src="./assets/snowy.svg">',
+     '<img src="./assets/sunandcloud.svg">',
+     '<img src="./assets/sunny.svg">'
+]
 
 const weatherApp = {}
 
@@ -155,9 +165,11 @@ weatherApp.getWeather = function(locationParameter){
      })
      //parse information into json
      .then((jsonResponse) => {
-          // console.log(jsonResponse);
+          console.log(jsonResponse);
           weatherApp.displayLocation(jsonResponse.resolvedAddress);
           weatherApp.displayWeather(jsonResponse.currentConditions);
+          weatherApp.displayIcon(jsonResponse.currentConditions.icon);
+          console.log(jsonResponse.currentConditions.icon);
      })
      .catch((err) => {
           alert(err);
@@ -173,13 +185,11 @@ weatherApp.displayLocation = function(locationData){
      location.textContent = locationData;
      
      const locationError = document.querySelector('.location p');
-     locationError.textContent="";
-     locationError.textContent= "Not the right city? Try specifying your state/province or country as well";
-
+     locationError.classList.add("visuallyShow");
 
      setTimeout(() => {
-          locationError.classList.add("visuallyHide");
-     }, 3000);
+          locationError.classList.remove("visuallyShow");
+     }, 6000);
 
 }
 
@@ -199,13 +209,9 @@ weatherApp.displayWeather = function(weatherData) {
      forecastConditions.appendChild(forecastHeading);
 
 
-     //create method to choose the if/else icons --> call that method into the displayWeather
-          //pass feelsLike as argument into displayClothing 
-     //append icon into forecastCondition
-
-
      //create a weather object to store selected conditions inside variables:
      const conditionsObject ={
+          status: `${weatherData.conditions}`,
           temperature : `${weatherData.temp} degrees`,
           wind : `${weatherData.windspeed} km/hr`,
           windGust : `${weatherData.windgust} km//hr`,
@@ -226,6 +232,26 @@ weatherApp.displayWeather = function(weatherData) {
 } // end of displayWeather function
 
 
+//create a function that holds if/else statements - determines which icon will be displayed based on current weather
+weatherApp.displayIcon = function(){
+     const iconContainer = document.querySelector('.iconContainer');
+     console.log(iconContainer);
+//      if (icon === "cloudy"){
+//           iconContainer.appendChild(weatherIcons[0]);
+//      } else if (icon === "clear-night") {
+//           iconContainer.appendChild(weatherIcons[1])
+//      } else if (icon === "partly-cloudy-night") {
+//           iconContainer.appendChild(weatherIcons[2]);
+//      } else if (icon === "rain") {
+//           iconContainer.appendChild(weatherIcons[3]);
+//      } else if (icon === "snow") {
+//           iconContainer.appendChild(weatherIcons[4]);
+//      } else if (icon === "partly-cloudy-day") {
+//           iconContainer.appendChild(weatherIcons[5]);
+//      } else {
+//           iconContainer.appendChild(weatherIcons[6]);
+//      }
+}
 
 //Create a method to store the forEach method inside- for each of the items inside the clothing array, create a new <li> with the clothing item inside
 weatherApp.selectClothingList = function(outfitParameter) {
