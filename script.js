@@ -4,14 +4,14 @@
 //Make init method and call it to kick things off
 //Create search bar to pull user's city/location
 //create event listener to store user's location and apply it to API call
-//Api Call
+//API Call
      //if something wrong, display error handling to re-input location
-//Append/display Weather on Page      
-//IF/ELSE statements from API call to select which temperature object to display
+//Append/display Weather on Page - h2 for feelsLike, and lis for additional info
+//create method to display clothing- use IF/ELSE statements from API call to select which clothing array to display
 //Append Array result from if/else statement to page 
 
 
-// where are our object/arrays begin for clothing options
+// clothing options for different temperature blocks inside our the runningAttire array
 const runningAttire = [
      {
      title: 'extremeCold',
@@ -86,67 +86,74 @@ const runningAttire = [
      }
 ] //end of runningAttire array
 
+
+
 const weatherApp = {}
 
+//define some variables for event listener + fetch call
 weatherApp.apiURL = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/`
 weatherApp.apiKey = '89Q5FZNA5A9RSN7FCW3A6F2NZ';
-
 
 weatherApp.form = document.querySelector('form');
 weatherApp.userInput = document.querySelector('input');
 
 
+//Create init function to set off event listener
 weatherApp.init = function(){
-     //add in event listener here- store event listener inside a function weatherapp.eventlistener()
-     console.log(`initialization`);
      eventListener();
 }
 
+
+
+//Create function to store event listener inside (to be called in init)
+//Create event listener to retrieve value of user input 
 const eventListener = function() {
-     //create event listener to pull user input value 
-     //pass user input value into the getWeather function to target user input location
      weatherApp.form.addEventListener('submit',function(e){
           e.preventDefault();
           weatherApp.userLocation = weatherApp.userInput.value;
-          // console.log(weatherApp.userLocation);
+          //pass userLocation as argument into getWeather for API call 
           weatherApp.getWeather(weatherApp.userLocation);
           weatherApp.userInput.value = "";
           weatherApp.displayLoading();
      })
 } // end of event listener
 
-// loading page function that will be called in the event listener
+
+
+// Loading page function that will be called in the event listener
 weatherApp.displayLoading = function() {
      const loader = document.querySelector('#displayLoading');
      loader.classList.add("display");
 
      setTimeout(() => {
           loader.classList.remove("display");
-     }, 1500);
+     }, 1200);
 }
 
-//pass user input location in as parameter
-//build out new URL to make api call    
-weatherApp.getWeather = function(parameter){
-     const url = new URL(weatherApp.apiURL + parameter);
+
+
+// Pass userLocation into getWeather function
+// Build out new URL with parameters to make API call    
+weatherApp.getWeather = function(locationParameter){
+     const url = new URL(weatherApp.apiURL + locationParameter);
      url.search = new URLSearchParams({
           unitGroup: "metric",
           key: weatherApp.apiKey,
           method: "GET",
           headers:{}
      })
-     //api call
+     //API call
      fetch(url)
      .then((response) => {
-          //error handling for if the api call did not work or user input was bad
           if(response.ok || response.status === 200){
                return response.json();
 
           } else {
+               //error handling: if API call doesn't work or user input is bad
                throw new Error ("This city doesn't exist! Please try again") ;    
           }      
      })
-     //parse into json
+     //parse information into json
      .then((jsonResponse) => {
           // console.log(jsonResponse);
           weatherApp.displayLocation(jsonResponse.resolvedAddress);
@@ -157,7 +164,9 @@ weatherApp.getWeather = function(parameter){
      })
 } //end of API call
 
-//put the location/address of api call on page (for user to know the location is correct)
+
+
+// Show the location/address of API call on page (for user to know if the location is correct)
 weatherApp.displayLocation = function(locationData){
      const location = document.querySelector('.location h3');
      location.textContent = "";
@@ -166,15 +175,21 @@ weatherApp.displayLocation = function(locationData){
      const locationError = document.querySelector('.location p');
      locationError.textContent="";
      locationError.textContent= "Not the right city? Try specifying your state/province or country as well";
+
+
+     setTimeout(() => {
+          locationError.classList.add("visuallyHide");
+     }, 1000);
+
 }
 
 
-// we need to have weather be retrieved
+
+// Pull current conditions information from API call, and show weather information on page
 weatherApp.displayWeather = function(weatherData) {
-     // console.log(weatherData);
      
      //select forecastConditions and store in variable
-     const forecastConditions = document.querySelector('.forecastCondition');
+     const forecastConditions = document.querySelector('.forecastHighlights');
      forecastConditions.innerHTML = "";
      //append feelsLike inside the forecastCondition
      const forecastHeading = document.createElement('h2');
@@ -189,7 +204,7 @@ weatherApp.displayWeather = function(weatherData) {
      //append icon into forecastCondition
 
 
-     //store all weather object values inside variables:
+     //create a weather object to store selected conditions inside variables:
      const conditionsObject ={
           temperature : `${weatherData.temp} degrees`,
           wind : `${weatherData.windspeed} km/hr`,
@@ -199,65 +214,59 @@ weatherApp.displayWeather = function(weatherData) {
           sunset : weatherData.sunset
      }
 
-     //for each item in conditionsObject, create an li and store variable inside it
-     const ulElement = document.querySelector('.additionalInfo');
-     ulElement.innerHTML="";
+     //for each item in conditionsObject, create an <li> and store variable inside it
+     const ulWeatherElement = document.querySelector('.additionalInfo');
+     ulWeatherElement.innerHTML="";
      for(const key in conditionsObject ){
           const listElement = document.createElement('li');
           listElement.textContent =`${key}: ${conditionsObject[key]}`;
-          ulElement.append(listElement);
+          ulWeatherElement.append(listElement);
      }
-
      weatherApp.displayClothing(feelsLike);
 } // end of displayWeather function
 
-     
-//create a method to store the forEach method inside- then call it inside each if/else statement
-weatherApp.selectClothingList = function(parameter) {
-     const clothingItems = document.querySelector('.clothingItems');
-     clothingItems.innerHTML = "";
 
-     parameter.forEach(function(item) {
+
+//Create a method to store the forEach method inside- for each of the items inside the clothing array, create a new <li> with the clothing item inside
+weatherApp.selectClothingList = function(outfitParameter) {
+     const ulClothingElement = document.querySelector('.clothingItems');
+     ulClothingElement.innerHTML = "";
+
+     outfitParameter.forEach(function(item) {
           const listedItem = document.createElement('li');
           listedItem.textContent = item;
-          clothingItems.append(listedItem);
+          ulClothingElement.append(listedItem);
      }) 
 } //end of selectClothingList function
 
+
+
+// Create a method that will take the feelsLike info from displayWeather, and use that number to create if/else statements to show different clothing outfits based on the temperature
 weatherApp.displayClothing = function(temperature) {
      if(temperature < -10) {
           // console.log(`WAH! COLD! BRR!`);
-          // console.log(runningAttire[0].clothing);
           weatherApp.selectClothingList(runningAttire[0].clothing);
 
      } else if(temperature >= -10 && temperature < 0) {
           // console.log(`its alright..kinda cold`);
-          // console.log(runningAttire[1].clothing);
           weatherApp.selectClothingList(runningAttire[1].clothing);
 
      } else if(temperature >= 0 && temperature < 5) {
           // console.log(`i'm temperate`);
-          // console.log(runningAttire[2].clothing);
           weatherApp.selectClothingList(runningAttire[2].clothing);
 
      } else if(temperature >= 5 && temperature < 15) {
           // console.log(`it's warm out!`);
-          // console.log(runningAttire[3].clothing);
           weatherApp.selectClothingList(runningAttire[3].clothing);
 
      } else if(temperature >= 15 && temperature < 25) {
           // console.log(`it's getting hot in here!`);
-          // console.log(runningAttire[4].clothing);
           weatherApp.selectClothingList(runningAttire[4].clothing);
      } else {
           // console.log(`is it wise run outside?`);
-          // console.log(runningAttire[5].clothing);
           weatherApp.selectClothingList(runningAttire[5].clothing);
      }
 } // end of displayClothing function
-
-// append the displayClothing to index.html via innerHtml
-
 
 
 //call init function

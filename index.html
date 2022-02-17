@@ -21,13 +21,15 @@
                 <label for="location">Where are you running?</label>
                 <input id="location" type="text" placeholder="Toronto, ON">
                 <button type="submit">Check Your Forecast!</button>
+                <img src="./assets/moonandcloud.svg" alt="">
             </form>
             
         </section>
         
         <section class="response">
+
             <!-- div for loading and have something -->
-            <div id="displayLoading">
+            <div id="displayLoading" class="displayLoading">
                 <!-- div for loading animation -->
                 <div id="loadingAnimation" class="loadingAnimation"></div>
             </div> <!-- end of displayLoading -->
@@ -35,28 +37,28 @@
             <div class="location">
                 <h3></h3>
                 <p></p>
-            </div>
+            </div> <!-- end of location -->
             
             <div class="results">
+
                 <div class="currentConditions">
-                    <div class="forecastCondition">
+                    <div class="forecastHighlights">
                         <!-- image and feelsLike go here -->
                     </div>
                     <ul class="additionalInfo">
                         <!-- more weather info goes here -->
-                    </ul>
-                    
-                </div>
+                    </ul>    
+                </div> <!-- end of currentConditions -->
                 
                 <div class="whatToWear">
                     <ul class="clothingItems">
                         <!-- clothing array goes here -->
                     </ul>
-                </div>
-            </div>
+                </div> <!-- end of whatToWear -->
+
+            </div>  <!-- end of results -->
                 
-                
-        </section>
+        </section>  <!-- end of response section -->
     </main>
 
     <footer>

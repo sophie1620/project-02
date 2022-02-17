@@ -1,0 +1,14 @@
+.response{
+// border: 2px solid red;
+min-height: 60vh;
+position: relative;
+}
+
+
+
+
+// this is the class to use to hide the 'not the right city?'
+.visuallyHide {
+display:none;
+transition: 0.3s;
+}
