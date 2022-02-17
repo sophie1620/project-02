@@ -111,9 +111,19 @@ const eventListener = function() {
           // console.log(weatherApp.userLocation);
           weatherApp.getWeather(weatherApp.userLocation);
           weatherApp.userInput.value = "";
+          weatherApp.displayLoading();
      })
 } // end of event listener
 
+// loading page function that will be called in the event listener
+weatherApp.displayLoading = function() {
+     const loader = document.querySelector('#displayLoading');
+     loader.classList.add("display");
+
+     setTimeout(() => {
+          loader.classList.remove("display");
+     }, 1500);
+}
 
 //pass user input location in as parameter
 //build out new URL to make api call    
@@ -131,12 +141,14 @@ weatherApp.getWeather = function(parameter){
           //error handling for if the api call did not work or user input was bad
           if(response.ok || response.status === 200){
                return response.json();
+
           } else {
                throw new Error ("This city doesn't exist! Please try again") ;    
           }      
      })
      //parse into json
      .then((jsonResponse) => {
+          // console.log(jsonResponse);
           weatherApp.displayLocation(jsonResponse.resolvedAddress);
           weatherApp.displayWeather(jsonResponse.currentConditions);
      })
@@ -144,7 +156,6 @@ weatherApp.getWeather = function(parameter){
           alert(err);
      })
 } //end of API call
-
 
 //put the location/address of api call on page (for user to know the location is correct)
 weatherApp.displayLocation = function(locationData){

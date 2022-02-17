@@ -2,5 +2,53 @@ h1 {
   color: blue;
 }
 
+.response {
+  min-height: 60vh;
+  position: relative;
+}
 
-/* visualize styling the forecast condition div where are side-by-side taking up equal space */
+/* loading page styling */
+.response #displayLoading {
+  min-height: 60vh;
+  width: 100%;
+  background-color: blanchedalmond;
+  display: none;
+  z-index: 10;
+  position: absolute;
+}
+.response #displayLoading .loadingAnimation {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: calc(50% - 100px);
+  left: calc(50% - 100px);
+  border-radius: 50%;
+  border: 25px solid royalblue;
+  border-top: 26px solid blanchedalmond;
+  -webkit-animation: spin 1s infinite linear;
+          animation: spin 1s infinite linear;
+}
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+#displayLoading.display {
+  display: block;
+}

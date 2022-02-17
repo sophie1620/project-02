@@ -1,0 +1,38 @@
+/* loading page styling */
+
+.response #displayLoading {
+    min-height: 60vh;
+    width: 100%;
+    background-color: blanchedalmond;
+    display: none;
+    z-index: 10;
+    position: absolute;
+
+    .loadingAnimation {
+        width: 200px;
+        height: 200px;
+        // background-color: royalblue;
+        // margin: 0 auto;
+        position: absolute;
+        top: calc(50% - 100px);
+        left: calc(50% - 100px);
+        border-radius: 50%;
+        border: 25px solid royalblue;
+        border-top: 26px solid blanchedalmond;
+        animation: spin 1s infinite linear;
+    }
+
+    @keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+}
+
+
+#displayLoading.display {
+    display: block;
+}
