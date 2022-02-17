@@ -240,7 +240,7 @@ h1 {
 }
 
 /* loading page styling */
-.response #displayLoading {
+.displayLoading {
   min-height: 60vh;
   width: 100%;
   background-color: blanchedalmond;
@@ -248,7 +248,7 @@ h1 {
   z-index: 10;
   position: absolute;
 }
-.response #displayLoading .loadingAnimation {
+.displayLoading .loadingAnimation {
   width: 200px;
   height: 200px;
   position: absolute;
@@ -292,6 +292,4 @@ h1 {
 
 .visuallyHide {
   display: none;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
 }

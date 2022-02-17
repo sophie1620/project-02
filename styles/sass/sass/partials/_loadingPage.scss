@@ -1,6 +1,6 @@
 /* loading page styling */
 
-.response #displayLoading {
+.displayLoading {
      min-height: 60vh;
      width: 100%;
      background-color: blanchedalmond;
@@ -12,7 +12,6 @@
           width: 200px;
           height: 200px;
           // background-color: royalblue;
-          // margin: 0 auto;
           position: absolute;
           top: calc(50% - 100px);
           left: calc(50% - 100px);

@@ -127,7 +127,7 @@ weatherApp.displayLoading = function() {
 
      setTimeout(() => {
           loader.classList.remove("display");
-     }, 1200);
+     }, 1500);
 }
 
 
@@ -179,7 +179,7 @@ weatherApp.displayLocation = function(locationData){
 
      setTimeout(() => {
           locationError.classList.add("visuallyHide");
-     }, 1000);
+     }, 3000);
 
 }
 
