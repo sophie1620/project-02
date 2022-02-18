@@ -16,72 +16,72 @@ const runningAttire = [
      {
      title: 'extremeCold',
      clothing: [
-          'hat', 
-          'faceCover', 
-          'neckCover',
-          'gloves', 
-          'mittens', 
-          'longSleeves',
-          'vest',
-          'jacket',
-          'leggings', 
-          'pants', 
-          'socks', 
-          'runningShoes'
+          'Hat', 
+          'Face cover', 
+          'Neck cover',
+          'Gloves', 
+          'Mittens', 
+          'Long sleeves',
+          'Vest',
+          'Jacket',
+          'Leggings', 
+          'Pants', 
+          'Socks', 
+          'Running shoes'
           ]
      },
 
      {
      title: 'cold', 
           clothing: [
-          'headband', 
-          'gloves', 
-          'longSleeve',
-          'jacket',
-          'leggings', 
-          'socks', 
-          'runningShoes'
+          'Headband', 
+          'Gloves', 
+          'Long sleeve',
+          'Jacket',
+          'Leggings', 
+          'Socks', 
+          'Running shoes'
           ]
      },
 
      {
      title: 'temperate',
      clothing: [
-          'longSleeve',
-          'vest',
-          'leggings', 
-          'socks', 
-          'runningShoes'
+          'Long sleeve',
+          'Vest',
+          'Leggings', 
+          'Socks', 
+          'Running shoes'
           ]
      }, 
 
      {
      title: 'warm',
      clothing: [
-          'shortSleeve',
-          'capris', 
-          'socks', 
-          'runningShoes'
+          'Short sleeve',
+          'Capris', 
+          'Socks', 
+          'Running shoes'
           ]
      }, 
 
      {
      title: 'hot',
      clothing: [
-          'tanktop',
-          'shorts', 
-          'socks', 
-          'runningShoes'
+          'Tanktop',
+          'Shorts', 
+          'Socks', 
+          'Running shoes'
           ]
      }, 
 
      {
      title: 'exteremeHeat',
      clothing: [
-          'tanktop',
-          'shorts', 
-          'socks', 
-          'runningShoes'
+          'Tanktop',
+          'Shorts', 
+          'Socks', 
+          'Running shoes'
           ]
      }
 ] //end of runningAttire array
@@ -135,7 +135,7 @@ weatherApp.displayLoading = function() {
      setTimeout(() => {
           loader.classList.remove("display");
      }, 1500);
-}
+} // end of displayLoading function
 
 
 // Pass userLocation into getWeather function
@@ -156,7 +156,7 @@ weatherApp.getWeather = function(locationParameter){
 
           } else {
                //error handling: if API call doesn't work or user input is bad
-               throw new Error ("This city doesn't exist! Please try again") ;    
+               throw new Error ("This city doesn't exist! Please try again.") ;    
           }      
      })
      //parse information into json
@@ -185,10 +185,7 @@ weatherApp.displayLocation = function(locationData){
      setTimeout(() => {
           locationError.classList.remove("visuallyShow");
      }, 6000);
-
-}
-
-
+} //end of displayLocatio function
 
 // Pull current conditions information from API call, and show weather information on page
 weatherApp.displayWeather = function(weatherData) {
@@ -266,14 +263,17 @@ weatherApp.selectClothingList = function(outfitParameter) {
      const ulClothingElement = document.querySelector('.clothingItems');
      ulClothingElement.innerHTML = "";
 
+     const runningOutfits = document.createElement('h3')
+
+     runningOutfits.textContent = "What to wear";
+     ulClothingElement.append(runningOutfits)
+
      outfitParameter.forEach(function(item) {
           const listedItem = document.createElement('li');
           listedItem.textContent = item;
           ulClothingElement.append(listedItem);
      }) 
 } //end of selectClothingList function
-
-
 
 // Create a method that will take the feelsLike info from displayWeather, and use that number to create if/else statements to show different clothing outfits based on the temperature
 weatherApp.displayClothing = function(temperature) {

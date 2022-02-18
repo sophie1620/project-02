@@ -1,2 +1,44 @@
 //need to set up basic font size - I am going to use REM for fonts
 //body {font-size: 125%;}
+
+body {
+    background-color: $backgroundColour;
+}
+
+.wrapper {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: $bodyTextColour;
+    
+    &:hover, 
+    &:focus {
+        color:#ffb36a;
+    }
+}
+
+button {
+    padding: 15px 20px;
+    border: none;
+    background-color: $accent;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+ul {
+    padding: 0;
+
+    li {
+        list-style: none;
+        line-height: 1.8rem;
+    }
+}
