@@ -229,7 +229,6 @@ weatherApp.displayWeather = function(weatherData) {
 
 //create a function that holds if/else statements - determines which icon will be displayed based on current weather
 weatherApp.displayIcon = function(icon){
-<<<<<<< Updated upstream
      // console.log('i works!');
      const iconContainer = document.querySelector('.iconContainer');
      iconContainer.innerHTML = "";
@@ -259,30 +258,6 @@ weatherApp.displayIcon = function(icon){
           iconContainer.appendChild(masterpiece);
      }
 } //end of displayIcon function
-=======
-     const iconContainer = document.querySelector('.iconContainer');
-     const blank = document.createElement('img');
-     iconContainer.appendChild(blank);
-     
-
-     if (icon == "cloudy"){
-          blank.src = `${weatherIcons[0]}`;
-     } else if (icon == "clear-night") {
-          iconContainer.appendChild(weatherIcons[1])
-     } else if (icon == "partly-cloudy-night") {
-          iconContainer.appendChild(weatherIcons[2]);
-     } else if (icon == "rain") {
-          iconContainer.appendChild(weatherIcons[3]);
-     } else if (icon == "snow") {
-          blank.src = `${weatherIcons[4]}`;
-          console.log(blank);
-     } else if (icon == "partly-cloudy-day") {
-          iconContainer.appendChild(weatherIcons[5]);
-     } else {
-          iconContainer.appendChild(weatherIcons[6]);
-     }
-}
->>>>>>> Stashed changes
 
 //Create a method to store the forEach method inside- for each of the items inside the clothing array, create a new <li> with the clothing item inside
 weatherApp.selectClothingList = function(outfitParameter) {
