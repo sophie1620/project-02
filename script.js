@@ -87,7 +87,6 @@ const runningAttire = [
 ] //end of runningAttire array
 
 //create array for different weather icons to use
-
 const weatherIcons = [
      "./assets/cloudy.svg",
      "./assets/moon.svg",
@@ -114,7 +113,6 @@ weatherApp.init = function(){
 }
 
 
-
 //Create function to store event listener inside (to be called in init)
 //Create event listener to retrieve value of user input 
 const eventListener = function() {
@@ -129,7 +127,6 @@ const eventListener = function() {
 } // end of event listener
 
 
-
 // Loading page function that will be called in the event listener
 weatherApp.displayLoading = function() {
      const loader = document.querySelector('#displayLoading');
@@ -139,7 +136,6 @@ weatherApp.displayLoading = function() {
           loader.classList.remove("display");
      }, 1500);
 }
-
 
 
 // Pass userLocation into getWeather function
@@ -165,17 +161,16 @@ weatherApp.getWeather = function(locationParameter){
      })
      //parse information into json
      .then((jsonResponse) => {
-          console.log(jsonResponse);
+          // console.log(jsonResponse);
           weatherApp.displayLocation(jsonResponse.resolvedAddress);
           weatherApp.displayWeather(jsonResponse.currentConditions);
           weatherApp.displayIcon(jsonResponse.currentConditions.icon);
-          console.log(jsonResponse.currentConditions.icon);
+          // console.log(jsonResponse.currentConditions.icon);
      })
      .catch((err) => {
           alert(err);
      })
 } //end of API call
-
 
 
 // Show the location/address of API call on page (for user to know if the location is correct)
@@ -236,36 +231,29 @@ weatherApp.displayWeather = function(weatherData) {
 weatherApp.displayIcon = function(icon){
      // console.log('i works!');
      const iconContainer = document.querySelector('.iconContainer');
+     iconContainer.innerHTML = "";
      
      const masterpiece = document.createElement('img');
      
-     console.log(iconContainer);
      if (icon === "cloudy"){
-          masterpiece.src = "";
           masterpiece.src = weatherIcons[0]
           iconContainer.appendChild(masterpiece);
      } else if (icon === "clear-night") {
-          masterpiece.src = "";
           masterpiece.src = weatherIcons[1]
           iconContainer.appendChild(masterpiece);
      } else if (icon === "partly-cloudy-night") {
-          masterpiece.src = "";
           masterpiece.src = weatherIcons[2]
           iconContainer.appendChild(masterpiece);
      } else if (icon === "rain") {
-          masterpiece.src = "";
           masterpiece.src = weatherIcons[3]
           iconContainer.appendChild(masterpiece);
      } else if (icon === "snow") {
-          masterpiece.src = "";
           masterpiece.src = weatherIcons[4]
           iconContainer.appendChild(masterpiece);
      } else if (icon === "partly-cloudy-day") {
-          masterpiece.src = "";
           masterpiece.src = weatherIcons[5]
           iconContainer.appendChild(masterpiece);
      } else {
-          masterpiece.src = "";
           masterpiece.src = weatherIcons[6]
           iconContainer.appendChild(masterpiece);
      }
