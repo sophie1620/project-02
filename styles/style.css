@@ -264,11 +264,50 @@ button {
   font-family: "Libreville";
 }
 
+body {
+  background-color: #20B5D8;
+}
+
+.wrapper {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: #4C4C4C;
+}
+a:hover, a:focus {
+  color: #ffb36a;
+}
+
+button {
+  padding: 15px 20px;
+  border: none;
+  background-color: #FEEA7E;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+ul {
+  padding: 0;
+}
+ul li {
+  list-style: none;
+  line-height: 1.8rem;
+}
+
 /* loading page styling */
 .displayLoading {
   min-height: 60vh;
   width: 100%;
-  background-color: blanchedalmond;
+  background-color: #FDF5F3;
   display: none;
   z-index: 10;
   position: absolute;
@@ -280,8 +319,8 @@ button {
   top: calc(50% - 100px);
   left: calc(50% - 100px);
   border-radius: 50%;
-  border: 25px solid royalblue;
-  border-top: 26px solid blanchedalmond;
+  border: 25px solid #FEEA7E;
+  border-top: 26px solid #FDF5F3;
   -webkit-animation: spin 1s infinite linear;
           animation: spin 1s infinite linear;
 }
@@ -315,10 +354,47 @@ button {
   position: relative;
 }
 
+/* this is the class to use to hide the 'not the right city?' */
 .errorHandling {
   color: white;
 }
 
 .visuallyShow {
   color: black;
+}
+
+/* form */
+form {
+  border: 1px solid red;
+  min-height: 25vh;
+  margin: 0 auto;
+  padding: 20% 15%;
+}
+
+/* current conditions div */
+/* what to wear div */
+.whatToWear {
+  width: 50%;
+  margin: 0 auto;
+}
+.whatToWear li {
+  list-style: square;
+  width: 80%;
+  margin: 0 auto;
+}
+
+footer {
+  background-color: #2090d8;
+  padding: 10px;
+  border-top: 2px solid #ffb36a;
+  border-bottom: 2px solid #ffb36a;
+}
+footer p {
+  text-align: center;
+  margin: 0;
+  color: #fffbe3;
+}
+footer p a {
+  color: #fffbe3;
+  font-weight: 600;
 }

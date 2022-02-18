@@ -1,18 +1,39 @@
-.response{
+
+.response {
 // border: 2px solid red;
 min-height: 60vh;
 position: relative;
 }
 
-
-
-
-// this is the class to use to hide the 'not the right city?'
-.errorHandling{
+/* this is the class to use to hide the 'not the right city?' */
+.errorHandling {
      color:white;
 }
 
-
 .visuallyShow {
           color:black;
+}
+/* form */
+form {
+     border: 1px solid red;
+     min-height: 25vh;
+     margin: 0 auto;
+     padding: 20% 15%;
+}
+
+
+/* current conditions div */
+
+/* what to wear div */
+.whatToWear {
+     // border: 1px solid red;
+     width: 50%;
+     margin: 0 auto;
+
+     li {
+          list-style: square;
+          // border: 1px solid green;
+          width: 80%;
+          margin: 0 auto;
      }
+}
