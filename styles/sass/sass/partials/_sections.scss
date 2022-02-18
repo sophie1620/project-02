@@ -16,3 +16,51 @@ position: relative;
 .visuallyShow {
           color:black;
      }
+
+
+////// WEATHER RESULTS SECTION //////
+
+body {
+     background-color: $backgroundColour;
+}
+.currentConditions {
+     background-color: $sectionsBackground;
+}
+.flexContainer {
+     display:flex;
+     justify-content: space-between;
+     // border: 2px solid red;
+     padding-top: 15px;
+}
+
+.iconContainer {
+     // border: 2px solid yellow;
+     width: 60%;
+     img {
+          width: 100%;
+          max-width: 300px;
+     }
+}
+
+.forecastHighlights {
+     // border:2px solid yellow;
+     width: 40%;
+     display:flex;
+     flex-direction: column;
+     justify-content: center;
+     padding-left: 15px;
+     h2{
+          margin: 10px 0;
+     }
+     span {
+          display:block;
+          margin: 5px 0;
+     }
+     h4 {
+          margin: 0;
+     }
+}
+
+.additionalInfo {
+     padding-bottom: 20px;
+}

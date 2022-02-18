@@ -196,33 +196,33 @@ weatherApp.displayWeather = function(weatherData) {
      //select forecastConditions and store in variable
      const forecastConditions = document.querySelector('.forecastHighlights');
      forecastConditions.innerHTML = "";
-     //append feelsLike inside the forecastCondition
-     const forecastHeading = document.createElement('h2');
+     //append feelsLike and the weather description inside the forecastCondition
      const feelsLike= weatherData.feelslike;
-     forecastHeading.textContent = `Feels Like: ${feelsLike} degrees`;
-     
-     forecastConditions.appendChild(forecastHeading);
+     forecastConditions.innerHTML = `<h2>Feels Like: <span>${feelsLike}°C</span></h2><h4>${weatherData.conditions}</h4>`;
+
 
 
      //create a weather object to store selected conditions inside variables:
      const conditionsObject ={
-          status: `${weatherData.conditions}`,
-          temperature : `${weatherData.temp} degrees`,
-          wind : `${weatherData.windspeed} km/hr`,
-          windGust : `${weatherData.windgust} km//hr`,
-          precipitation : `${weatherData.precip} mm`,
-          sunrise : weatherData.sunrise,
-          sunset : weatherData.sunset
+          Temperature: `${weatherData.temp} °C`,
+          Wind : `${weatherData.windspeed} km/h`,
+          Gusts : `${weatherData.windgust} km/h`,
+          Precipitation : `${weatherData.precip} mm`,
+          Sunrise : weatherData.sunrise,
+          Sunset : weatherData.sunset
      }
 
-     //for each item in conditionsObject, create an <li> and store variable inside it
+     //for each item in conditionsObject, create an <li> and store variable inside it --> also create an h4 to hold the description of the icon
+
      const ulWeatherElement = document.querySelector('.additionalInfo');
      ulWeatherElement.innerHTML="";
+
      for(const key in conditionsObject ){
           const listElement = document.createElement('li');
           listElement.textContent =`${key}: ${conditionsObject[key]}`;
           ulWeatherElement.append(listElement);
      }
+
      weatherApp.displayClothing(feelsLike);
 } // end of displayWeather function
 
@@ -257,6 +257,8 @@ weatherApp.displayIcon = function(icon){
           masterpiece.src = weatherIcons[6]
           iconContainer.appendChild(masterpiece);
      }
+
+     
 } //end of displayIcon function
 
 //Create a method to store the forEach method inside- for each of the items inside the clothing array, create a new <li> with the clothing item inside

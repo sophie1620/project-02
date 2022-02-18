@@ -251,6 +251,11 @@ h3 {
   font-family: "Libreville";
 }
 
+h4 {
+  font-size: 1rem;
+  font-family: "Libreville";
+}
+
 li,
 p,
 input,
@@ -321,4 +326,59 @@ button {
 
 .visuallyShow {
   color: black;
+}
+
+body {
+  background-color: #20B5D8;
+}
+
+.currentConditions {
+  background-color: #FDF5F3;
+}
+
+.flexContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 15px;
+}
+
+.iconContainer {
+  width: 60%;
+}
+.iconContainer img {
+  width: 100%;
+  max-width: 300px;
+}
+
+.forecastHighlights {
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-left: 15px;
+}
+.forecastHighlights h2 {
+  margin: 10px 0;
+}
+.forecastHighlights span {
+  display: block;
+  margin: 5px 0;
+}
+.forecastHighlights h4 {
+  margin: 0;
+}
+
+.additionalInfo {
+  padding-bottom: 20px;
 }

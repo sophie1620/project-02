@@ -17,11 +17,11 @@
 
 <body>
     <header>
-        <h1>Weather to Run or Not</h1>
+        <h1>Weather to Run <span>or Not</span></h1>
     </header>
 
     <main>
-        <section class="whereToRun">
+        <section class="whereToRun wrapper">
             <form action="">
                 <label for="location">Where are you running?</label>
                 <input id="location" type="text" placeholder="Toronto, ON">
@@ -38,32 +38,30 @@
                 <div id="loadingAnimation" class="loadingAnimation"></div>
             </div> <!-- end of displayLoading -->
 
-            <div class="location">
+            <div class="location wrapper">
                 <h3></h3>
                 <p class="errorHandling">Not the right city? Try specifying your state/province or country as well</p>
             </div> <!-- end of location -->
             
             <div class="results">
 
-                <div class="currentConditions">
-                    <div class"flexContainer">
-                        <div class="forecastHighlights">
-                            
-                        </div>
+                <div class="currentConditions wrapper">
+                    <div class="flexContainer">
                         <div class="iconContainer">
-
+                            <!-- icon goes here -->
                         </div>
-                    </div>
-                    <!-- image and feelsLike go here -->
-                    <!-- <div id="iconContainer" class="iconContainer">
-                        <img src="" alt=""> -->
-                        <!-- </div> -->
+                        <div class="forecastHighlights">
+                            <!-- feelsLike goes here -->
+                        </div>
+                    </div> <!-- flex container ends -->
+
                     <ul class="additionalInfo">
                         <!-- more weather info goes here -->
-                    </ul>    
+                    </ul>
+
                 </div> <!-- end of currentConditions -->
                 
-                <div class="whatToWear">
+                <div class="whatToWear wrapper">
                     <ul class="clothingItems">
                         <!-- clothing array goes here -->
                     </ul>
