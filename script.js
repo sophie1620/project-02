@@ -165,7 +165,7 @@ weatherApp.getWeather = function(locationParameter){
           weatherApp.displayLocation(jsonResponse.resolvedAddress);
           weatherApp.displayWeather(jsonResponse.currentConditions);
           weatherApp.displayIcon(jsonResponse.currentConditions.icon);
-          // console.log(jsonResponse.currentConditions.icon);
+          console.log(jsonResponse.currentConditions);
      })
      .catch((err) => {
           alert(err);
@@ -199,7 +199,7 @@ weatherApp.displayWeather = function(weatherData) {
      //append feelsLike inside the forecastCondition
      const forecastHeading = document.createElement('h2');
      const feelsLike= weatherData.feelslike;
-     forecastHeading.textContent = `current temperature: ${feelsLike} degrees`;
+     forecastHeading.textContent = `Feels Like: ${feelsLike} degrees`;
      
      forecastConditions.appendChild(forecastHeading);
 

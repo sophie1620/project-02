@@ -1,0 +1,36 @@
+//still need to figure these out exactly- like the 3 fonts, but matter of where to plug in a bit of serif font
+
+//Red Hat weights 300 (light) + 600 (semibold)
+//Libreville weight 400 (regular)
+
+h1 {
+     font-size: 3.5rem;
+     color: $bodyTextColour;
+     font-family: $h1Font;
+}
+
+h2 {
+     font-size: 1.6rem;
+     font-family: $sansSerifFont
+}
+
+h3 {
+     font-size: 1.6rem;
+     font-family: $serifFont;
+     // font-weight:lighter;
+}
+
+li,
+p,
+input,
+label {
+     font-size: 1rem;
+     font-family: $sansSerifFont;
+     line-height: 1.4;
+}
+
+button {
+     font-family: $serifFont;
+}
+
+//I think we should add the $serifFont for the the status of weather (I may change the script to make it an h4), and do you think we should add in a title for 'what to wear'? - if so, i'll add the serifFont to it too - h3 maybe? 
