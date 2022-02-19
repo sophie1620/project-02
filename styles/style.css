@@ -424,10 +424,6 @@ form {
       -ms-flex-align: center;
           align-items: center;
 }
-form label {
-  text-align: center;
-  font-size: 1.2rem;
-}
 form input {
   width: 235px;
   margin: 20px 0;
