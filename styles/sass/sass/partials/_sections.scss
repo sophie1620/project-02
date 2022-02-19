@@ -40,7 +40,18 @@ form {
 /////// WHAT TO WEAR ///////////
 .whatToWear {
      margin-bottom: 30px;
-
+     max-width: 450px;
+     .clothingFlexContainer {
+          display:flex;
+          flex-direction:row;
+          align-items: center;
+          img {
+               width: 35%;
+               max-width:170px; 
+               padding-top: 15px;
+               margin-right: 25px;
+          }
+     }
      ul {
      padding: 15px;
      margin: 0 auto;
@@ -80,13 +91,16 @@ form {
      align-items: center;
      h3 {
           margin: 8px 0 0 0;
+          padding: 0 10px;
           color: $accent;
+          text-align:center;
      }
 }
 
 // class to add to the location section 
 .locationBackground {
      background-color: $bodyTextColour;
+     max-width:450px;
 }
 
 .errorHandling {
@@ -104,15 +118,17 @@ form {
      font-size: 1rem;
 }
 
-.flexContainer {
-     display:flex;
-     justify-content: space-between;
-     // border: 2px solid red;
-     padding-top: 15px;
+.currentConditions {
+     max-width: 450px;
+     .flexContainer {
+          display:flex;
+          justify-content: space-between;
+          padding-top: 15px;
+     }
 }
 
+
 .iconContainer {
-     // border: 2px solid yellow;
      width: 60%;
      img {
           width: 100%;
@@ -121,7 +137,6 @@ form {
 }
 
 .forecastHighlights {
-     // border:2px solid yellow;
      width: 40%;
      display:flex;
      flex-direction: column;
@@ -129,11 +144,11 @@ form {
      padding-left: 15px;
      h2{
           margin: 10px 0;
-     }
-     span {
-          display:block;
-          margin: 5px 0;
-     }
+          span {
+               display:block;
+               margin: 5px 0;
+          }
+     } 
      h4 {
           margin: 0;
      }

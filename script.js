@@ -237,12 +237,11 @@ weatherApp.displayWeather = function(weatherData) {
 /////////// DISPLAY ICON FUNCTION ///////////
 //create a function that holds if/else statements - determines which icon will be displayed based on current weather
 weatherApp.displayIcon = function(icon){
-     // console.log('i works!');
      const iconContainer = document.querySelector('.iconContainer');
      iconContainer.innerHTML = "";
      
      const masterpiece = document.createElement('img');
-     
+     //if/else statements to know which image to append
      if (icon === "cloudy"){
           masterpiece.src = weatherIcons[0]
           iconContainer.appendChild(masterpiece);
@@ -275,25 +274,29 @@ weatherApp.displayIcon = function(icon){
 //////// SELECT CLOTHING LIST FUNCTION ///////////
 //Create a method to store the forEach method inside- for each of the items inside the clothing array, create a new <li> with the clothing item inside
 weatherApp.selectClothingList = function(outfitParameter) {
+     //add styling to whatToWear section and clear previous list items
      const whatToWear = document.querySelector('.whatToWear');
      whatToWear.classList.add('sectionsBackground')
      const ulClothingElement = document.querySelector('.clothingItems');
      ulClothingElement.innerHTML = "";
 
-     const runningOutfits = document.createElement('h3')
+     //create h3 title and img to append to clothingFlexContainer div
+     const clothingFlexContainer = document.querySelector('.clothingFlexContainer');
+     clothingFlexContainer.innerHTML = "";
 
+     const footprints = document.createElement('img');
+     footprints.src="./assets/shoesPink.png";
+     const runningOutfits = document.createElement('h2')
      runningOutfits.textContent = "What to wear";
-     ulClothingElement.append(runningOutfits)
+     clothingFlexContainer.append(footprints);
+     clothingFlexContainer.append(runningOutfits);
 
-     const columnDiv = document.createElement('div');
-     columnDiv.classList.add('column');
-
-
+     ulClothingElement.classList.add('column');
+     //.forEach loop
      outfitParameter.forEach(function(item) {
           const listedItem = document.createElement('li');
           listedItem.textContent = item;
-          columnDiv.append(listedItem);
-          ulClothingElement.append(columnDiv);
+          ulClothingElement.append(listedItem);
      }) 
 } //end of selectClothingList function
 
