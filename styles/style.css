@@ -268,6 +268,8 @@ label {
 
 label {
   color: black;
+  text-align: center;
+  font-size: 1.2rem;
 }
 
 button {
@@ -330,7 +332,8 @@ header .greycurve {
           align-items: center;
 }
 header .greycurve img {
-  max-width: 230%;
+  border: 2px solid red;
+  width: 100%;
   position: absolute;
   bottom: 0;
   left: -5%;
@@ -398,7 +401,7 @@ h1 span {
 }
 
 .response {
-  min-height: 30vh;
+  min-height: 28vh;
   position: relative;
 }
 
@@ -423,10 +426,12 @@ form {
 }
 form label {
   text-align: center;
+  font-size: 1.2rem;
 }
 form input {
   width: 235px;
   margin: 20px 0;
+  padding: 10px;
 }
 form button {
   width: 235px;
@@ -582,3 +587,5 @@ footer p a {
   color: #fffbe3;
   font-weight: 600;
 }
+
+/* need to change the header image sizing so that it looks good visually in the mobile version.  For web, we can set it to be 100% width */

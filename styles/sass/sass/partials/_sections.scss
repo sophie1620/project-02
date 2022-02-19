@@ -1,7 +1,8 @@
 
 .response {
 // border: 2px solid red;
-min-height: 30vh;
+min-height: 28vh;
+// min-height: 17vh;
 position: relative;
 }
 
@@ -21,14 +22,12 @@ form {
      flex-direction: column;
      align-items: center;
 
-     label {
-          text-align: center;
-
      }
 
      input {
           width: 235px;
           margin: 20px 0;
+          padding: 10px;
      }
 
      button {

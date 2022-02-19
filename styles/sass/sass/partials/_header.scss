@@ -10,8 +10,9 @@ header {
           display:flex;
           align-items: center;
           img {
-               // border: 2px solid red;
-               max-width:230%;
+               border: 2px solid red;
+               // max-width:230%;
+               width: 100%;
                position:absolute;
                bottom: 0;
                left: -5%;
