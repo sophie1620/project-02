@@ -40,7 +40,8 @@ form {
 /////// WHAT TO WEAR ///////////
 .whatToWear {
      margin-bottom: 30px;
-     width: 50%;
+     max-width: 50%;
+     min-width: 280px;
 
      ul {
      padding: 15px;
@@ -48,7 +49,7 @@ form {
      // border: 1px solid rebeccapurple;
 
           li {
-               width: 50%;
+               width: 150px;
                // border: 1px solid red;
                margin: 0 auto;
           }
@@ -57,6 +58,7 @@ form {
                     text-align: center;
                     // border: 1px solid blue;
                     margin: 0 auto;
+                    padding-bottom: 15px;
                }
      }
 }

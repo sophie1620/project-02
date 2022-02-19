@@ -400,19 +400,21 @@ form button {
 
 .whatToWear {
   margin-bottom: 30px;
-  width: 50%;
+  max-width: 50%;
+  min-width: 280px;
 }
 .whatToWear ul {
   padding: 15px;
   margin: 0 auto;
 }
 .whatToWear ul li {
-  width: 50%;
+  width: 150px;
   margin: 0 auto;
 }
 .whatToWear ul h3 {
   text-align: center;
   margin: 0 auto;
+  padding-bottom: 15px;
 }
 
 .clothingContainerStylinging {
