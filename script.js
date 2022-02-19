@@ -262,8 +262,8 @@ weatherApp.displayIcon = function(icon){
 weatherApp.selectClothingList = function(outfitParameter) {
      const whatToWear = document.querySelector('.whatToWear');
      console.log(whatToWear);
-     whatToWear.style.backgroundColor = "#fffbe3";
-     whatToWear.style.border = "8px solid #1b7db9"
+     whatToWear.classList.add('clothingContainerStylinging'
+);
      const ulClothingElement = document.querySelector('.clothingItems');
      ulClothingElement.innerHTML = "";
 
