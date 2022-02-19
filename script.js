@@ -108,12 +108,14 @@ weatherApp.form = document.querySelector('form');
 weatherApp.userInput = document.querySelector('input');
 
 
+/////// INIT FUNCTION /////////
 //Create init function to set off event listener
 weatherApp.init = function(){
      eventListener();
 }
 
 
+///////// EVENT LISTENER ///////////
 //Create function to store event listener inside (to be called in init)
 //Create event listener to retrieve value of user input 
 const eventListener = function() {
@@ -128,6 +130,7 @@ const eventListener = function() {
 } // end of event listener
 
 
+///////// DISPLAY LOADING FUNCTION //////////
 // Loading page function that will be called in the event listener
 weatherApp.displayLoading = function() {
      const loader = document.querySelector('#displayLoading');
@@ -139,6 +142,7 @@ weatherApp.displayLoading = function() {
 } // end of displayLoading function
 
 
+////////// GET WEATHER FUNCTION //////////
 // Pass userLocation into getWeather function
 // Build out new URL with parameters to make API call    
 weatherApp.getWeather = function(locationParameter){
@@ -166,7 +170,6 @@ weatherApp.getWeather = function(locationParameter){
           weatherApp.displayLocation(jsonResponse.resolvedAddress);
           weatherApp.displayWeather(jsonResponse.currentConditions);
           weatherApp.displayIcon(jsonResponse.currentConditions.icon);
-          console.log(jsonResponse.currentConditions);
      })
      .catch((err) => {
           alert(err);
@@ -174,20 +177,26 @@ weatherApp.getWeather = function(locationParameter){
 } //end of API call
 
 
+/////// DISPLAY LOCATION FUNCTION ////////
 // Show the location/address of API call on page (for user to know if the location is correct)
 weatherApp.displayLocation = function(locationData){
      const location = document.querySelector('.location h3');
      location.textContent = "";
      location.textContent = locationData;
-     
+     //add visual prompt to user if information is wrong
      const locationError = document.querySelector('.location p');
      locationError.classList.add("visuallyShow");
+     //add background colour to section
+     const locationSection = document.querySelector('.location')
+     locationSection.classList.add('locationBackground');
 
      setTimeout(() => {
           locationError.classList.remove("visuallyShow");
      }, 6000);
-} //end of displayLocatio function
+} //end of displayLocation function
 
+
+///////// DISPLAY WEATHER FUNCTION ///////////
 // Pull current conditions information from API call, and show weather information on page
 weatherApp.displayWeather = function(weatherData) {
      
@@ -198,7 +207,9 @@ weatherApp.displayWeather = function(weatherData) {
      const feelsLike= weatherData.feelslike;
      forecastConditions.innerHTML = `<h2>Feels Like: <span>${feelsLike}°C</span></h2><h4>${weatherData.conditions}</h4>`;
 
-
+     //add styling for background onto currentConditions section, once information is displayed:
+     const currentConditions = document.querySelector('.currentConditions');
+     currentConditions.classList.add('sectionsBackground')
 
      //create a weather object to store selected conditions inside variables:
      const conditionsObject ={
@@ -211,20 +222,19 @@ weatherApp.displayWeather = function(weatherData) {
      }
 
      //for each item in conditionsObject, create an <li> and store variable inside it --> also create an h4 to hold the description of the icon
-
      const ulWeatherElement = document.querySelector('.additionalInfo');
      ulWeatherElement.innerHTML="";
-
      for(const key in conditionsObject ){
           const listElement = document.createElement('li');
           listElement.textContent =`${key}: ${conditionsObject[key]}`;
           ulWeatherElement.append(listElement);
      }
-
      weatherApp.displayClothing(feelsLike);
 } // end of displayWeather function
 
 
+
+/////////// DISPLAY ICON FUNCTION ///////////
 //create a function that holds if/else statements - determines which icon will be displayed based on current weather
 weatherApp.displayIcon = function(icon){
      // console.log('i works!');
@@ -261,12 +271,12 @@ weatherApp.displayIcon = function(icon){
      
 } //end of displayIcon function
 
+
+//////// SELECT CLOTHING LIST FUNCTION ///////////
 //Create a method to store the forEach method inside- for each of the items inside the clothing array, create a new <li> with the clothing item inside
 weatherApp.selectClothingList = function(outfitParameter) {
      const whatToWear = document.querySelector('.whatToWear');
-     console.log(whatToWear);
-     whatToWear.style.backgroundColor = "#fffbe3";
-     whatToWear.style.border = "8px solid #1b7db9"
+     whatToWear.classList.add('sectionsBackground')
      const ulClothingElement = document.querySelector('.clothingItems');
      ulClothingElement.innerHTML = "";
 
@@ -282,6 +292,8 @@ weatherApp.selectClothingList = function(outfitParameter) {
      }) 
 } //end of selectClothingList function
 
+
+///////// DISPLAY CLOTHING FUNCTION ///////////
 // Create a method that will take the feelsLike info from displayWeather, and use that number to create if/else statements to show different clothing outfits based on the temperature
 weatherApp.displayClothing = function(temperature) {
      if(temperature < -10) {

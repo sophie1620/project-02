@@ -5,8 +5,15 @@ min-height: 60vh;
 position: relative;
 }
 
+// class to add to the sections when called
+.sectionsBackground {
+     background-color: $sectionsBackground;
+     margin-bottom:30px;
+     border: 8px solid #1b7db9;
+}
 
-/* form */
+
+/////// FORM /////////
 form {
      // border: 1px solid red;
      min-height: 25vh;
@@ -29,34 +36,34 @@ form {
 
 /////// WHAT TO WEAR ///////////
 .whatToWear {
-     margin-bottom: 30px;
-     // width: 50%;
-
-     // li {
-     //      // border: 1px solid green;
-     //      width: 80%;
-     //      margin: 0 auto;
-     // }
      ul {
-     padding: 1px 0 15px 5%;
+          padding: 1px 0 15px 5%;
      }
 }
-
 
 
 
 ////// WEATHER RESULTS SECTION //////
 
-
 /* this is the class to use to hide the 'not the right city?' */
 .location{
      margin-bottom: 15px;
+     display:flex;
+     flex-direction:column;
+     align-items: center;
      h3 {
-          margin: 0;
+          margin: 8px 0 0 0;
+          color: $accent;
      }
 }
 
+// class to add to the location section 
+.locationBackground {
+     background-color: $bodyTextColour;
+}
+
 .errorHandling {
+     margin: 5px;
      color:transparent;
      font-size: 0.1rem;
      transition: all 1200ms ease-out;
@@ -66,14 +73,8 @@ form {
 }
 
 .visuallyShow {
-     color:black; 
+     color:white; 
      font-size: 1rem;
-}
-
-.currentConditions {
-     background-color: $sectionsBackground;
-     margin-bottom:30px;
-     border: 8px solid #1b7db9;
 }
 
 .flexContainer {
