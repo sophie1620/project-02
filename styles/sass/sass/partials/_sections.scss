@@ -7,7 +7,7 @@ position: relative;
 
 /* this is the class to use to hide the 'not the right city?' */
 .errorHandling {
-     color:white;
+     color: transparent;
 }
 
 .visuallyShow {
@@ -15,19 +15,27 @@ position: relative;
 }
 /* form */
 form {
-     border: 1px solid red;
+     // border: 1px solid red;
      min-height: 25vh;
      margin: 0 auto;
      padding: 20% 15%;
+
+     label {
+          text-align: center;
+          display: flex;
+          justify-content: center;
+
+     }
+
+     input {
+          width: 235px;
+          margin: 20px 0;
+     }
 }
 
 
 /////// WHAT TO WEAR ///////////
-
-
 .whatToWear {
-     // border: 1px solid red;
-     background-color: #fffbe3;
      margin-bottom: 30px;
      // width: 50%;
 

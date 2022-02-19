@@ -260,6 +260,10 @@ weatherApp.displayIcon = function(icon){
 
 //Create a method to store the forEach method inside- for each of the items inside the clothing array, create a new <li> with the clothing item inside
 weatherApp.selectClothingList = function(outfitParameter) {
+     const whatToWear = document.querySelector('.whatToWear');
+     console.log(whatToWear);
+     whatToWear.style.backgroundColor = "#fffbe3";
+     whatToWear.style.border = "8px solid #1b7db9"
      const ulClothingElement = document.querySelector('.clothingItems');
      ulClothingElement.innerHTML = "";
 
