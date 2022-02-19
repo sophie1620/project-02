@@ -285,10 +285,15 @@ weatherApp.selectClothingList = function(outfitParameter) {
      runningOutfits.textContent = "What to wear";
      ulClothingElement.append(runningOutfits)
 
+     const columnDiv = document.createElement('div');
+     columnDiv.classList.add('column');
+
+
      outfitParameter.forEach(function(item) {
           const listedItem = document.createElement('li');
           listedItem.textContent = item;
-          ulClothingElement.append(listedItem);
+          columnDiv.append(listedItem);
+          ulClothingElement.append(columnDiv);
      }) 
 } //end of selectClothingList function
 
