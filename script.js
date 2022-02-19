@@ -94,7 +94,8 @@ const weatherIcons = [
      "./assets/rainy.svg",
      "./assets/snowy.svg",
      "./assets/sunandcloud.svg",
-     "./assets/sunny.svg"
+     "./assets/sunny.svg",
+     "./assets/windy.svg"
 ]
 
 const weatherApp = {}
@@ -250,11 +251,13 @@ weatherApp.displayIcon = function(icon){
      } else if (icon === "partly-cloudy-day") {
           masterpiece.src = weatherIcons[5]
           iconContainer.appendChild(masterpiece);
-     } else {
+     } else if (icon === "clear"){
           masterpiece.src = weatherIcons[6]
           iconContainer.appendChild(masterpiece);
+     }  else {
+          masterpiece.src = weatherIcons[7]
+          iconContainer.appendChild(masterpiece);
      }
-
      
 } //end of displayIcon function
 

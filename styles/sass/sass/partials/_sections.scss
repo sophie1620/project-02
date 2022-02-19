@@ -5,14 +5,8 @@ min-height: 60vh;
 position: relative;
 }
 
-/* this is the class to use to hide the 'not the right city?' */
-.errorHandling {
-     color:white;
-}
 
-.visuallyShow {
-          color:black;
-}
+
 /* form */
 form {
      border: 1px solid red;
@@ -46,8 +40,27 @@ form {
 
 ////// WEATHER RESULTS SECTION //////
 
-.location {
-     margin-bottom: 30px;
+
+/* this is the class to use to hide the 'not the right city?' */
+.location{
+     margin-bottom: 15px;
+     h3 {
+          margin: 0;
+     }
+}
+
+.errorHandling {
+     color:transparent;
+     font-size: 0.1rem;
+     transition: all 1200ms ease-out;
+     span {
+          display:block;
+     }
+}
+
+.visuallyShow {
+     color:black; 
+     font-size: 1rem;
 }
 
 .currentConditions {

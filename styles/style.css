@@ -308,9 +308,20 @@ ul li {
   line-height: 1.8rem;
 }
 
+header {
+  background-color: #4C4C4C;
+  padding: 45px 0;
+  border-bottom-right-radius: 40%;
+}
+
+h1 {
+  color: #FEEA7E;
+  text-align: center;
+}
 h1 span {
   font-size: 2.5rem;
   display: block;
+  opacity: 0.7;
 }
 
 /* loading page styling */
@@ -364,15 +375,6 @@ h1 span {
   position: relative;
 }
 
-/* this is the class to use to hide the 'not the right city?' */
-.errorHandling {
-  color: white;
-}
-
-.visuallyShow {
-  color: black;
-}
-
 /* form */
 form {
   border: 1px solid red;
@@ -389,8 +391,27 @@ form {
   padding: 1px 0 15px 5%;
 }
 
+/* this is the class to use to hide the 'not the right city?' */
 .location {
-  margin-bottom: 30px;
+  margin-bottom: 15px;
+}
+.location h3 {
+  margin: 0;
+}
+
+.errorHandling {
+  color: transparent;
+  font-size: 0.1rem;
+  -webkit-transition: all 1200ms ease-out;
+  transition: all 1200ms ease-out;
+}
+.errorHandling span {
+  display: block;
+}
+
+.visuallyShow {
+  color: black;
+  font-size: 1rem;
 }
 
 .currentConditions {
