@@ -1,8 +1,8 @@
 
 .response {
 // border: 2px solid red;
-min-height: 100%;
-position: relative;
+min-height: 35vh;
+// position: relative;
 }
 
 // class to add to the sections when called
@@ -16,7 +16,7 @@ position: relative;
 /////// FORM /////////
 form {
      // border: 1px solid red;
-     margin: 0 auto;
+     margin: 20px auto;
      display: flex;
      flex-direction: column;
      align-items: center;
@@ -45,9 +45,10 @@ form {
      padding: 15px;
      margin: 0 auto;
      // border: 1px solid rebeccapurple;
+     // width: 450px; for media queries
 
           li {
-               width: 150px;
+               width: 120px;
                // border: 1px solid red;
                margin: 0 auto;
           }
@@ -60,6 +61,13 @@ form {
           }
      }
 }
+
+.column {
+     column-count: 2;
+     column-gap: 0;
+     // border: 1px solid green
+}
+
 
 
 ////// WEATHER RESULTS SECTION //////
