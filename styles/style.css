@@ -248,12 +248,12 @@ h2 {
 
 h3 {
   font-size: 1.6rem;
-  font-family: "Libreville";
+  font-family: "Quando";
 }
 
 h4 {
   font-size: 1rem;
-  font-family: "Libreville";
+  font-family: "Quando";
 }
 
 li,
@@ -266,7 +266,7 @@ label {
 }
 
 button {
-  font-family: "Libreville";
+  font-family: "Quando";
 }
 
 body {
@@ -375,18 +375,6 @@ h1 span {
   position: relative;
 }
 
-<<<<<<< HEAD
-=======
-/* this is the class to use to hide the 'not the right city?' */
-.errorHandling {
-  color: transparent;
-}
-
-.visuallyShow {
-  color: black;
-}
-
->>>>>>> origin/sophiesPartials
 /* form */
 form {
   min-height: 25vh;
