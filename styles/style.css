@@ -330,7 +330,6 @@ header .greycurve {
           align-items: center;
 }
 header .greycurve img {
-  border: 2px solid red;
   max-width: 230%;
   position: absolute;
   bottom: 0;
