@@ -428,11 +428,6 @@ form button {
   padding-bottom: 15px;
 }
 
-.clothingContainerStylinging {
-  background-color: #FFFBE3;
-  border: 8px solid #1B7DB9;
-}
-
 /* this is the class to use to hide the 'not the right city?' */
 .location {
   margin-bottom: 15px;
