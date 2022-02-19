@@ -332,7 +332,7 @@ h1 span {
 
 /* loading page styling */
 .displayLoading {
-  min-height: 160vh;
+  min-height: 100%;
   width: 100%;
   background-color: #f3f3f3;
   display: none;
@@ -377,7 +377,7 @@ h1 span {
 }
 
 .response {
-  min-height: 60vh;
+  min-height: 100%;
   position: relative;
 }
 
