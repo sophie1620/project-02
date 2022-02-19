@@ -32,10 +32,16 @@ label {
      font-size: 1rem;
      font-family: $sansSerifFont;
      line-height: 1.4;
+     color: $bodyTextColour;
+}
+
+label {
+     color: black;
 }
 
 button {
      font-family: $serifFont;
+     color: $bodyTextColour;
 }
 
 //I think we should add the $serifFont for the the status of weather (I may change the script to make it an h4), and do you think we should add in a title for 'what to wear'? - if so, i'll add the serifFont to it too - h3 maybe? 

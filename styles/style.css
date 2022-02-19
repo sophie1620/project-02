@@ -248,12 +248,12 @@ h2 {
 
 h3 {
   font-size: 1.6rem;
-  font-family: "Libreville";
+  font-family: "Quando";
 }
 
 h4 {
   font-size: 1rem;
-  font-family: "Libreville";
+  font-family: "Quando";
 }
 
 li,
@@ -263,10 +263,16 @@ label {
   font-size: 1rem;
   font-family: "Red Hat Display";
   line-height: 1.4;
+  color: #4C4C4C;
+}
+
+label {
+  color: black;
 }
 
 button {
-  font-family: "Libreville";
+  font-family: "Quando";
+  color: #4C4C4C;
 }
 
 body {
@@ -308,9 +314,20 @@ ul li {
   line-height: 1.8rem;
 }
 
+header {
+  background-color: #4C4C4C;
+  padding: 45px 0;
+  border-bottom-right-radius: 40%;
+}
+
+h1 {
+  color: #FEEA7E;
+  text-align: center;
+}
 h1 span {
   font-size: 2.5rem;
   display: block;
+  opacity: 0.7;
 }
 
 /* loading page styling */
@@ -364,16 +381,12 @@ h1 span {
   position: relative;
 }
 
-/* this is the class to use to hide the 'not the right city?' */
-.errorHandling {
-  color: transparent;
+.sectionsBackground {
+  background-color: #f3f3f3;
+  margin-bottom: 30px;
+  border: 8px solid #1b7db9;
 }
 
-.visuallyShow {
-  color: black;
-}
-
-/* form */
 form {
   margin: 0 auto;
   display: -webkit-box;
@@ -420,14 +433,43 @@ form button {
   border: 8px solid #1B7DB9;
 }
 
+/* this is the class to use to hide the 'not the right city?' */
 .location {
-  margin-bottom: 30px;
+  margin-bottom: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.location h3 {
+  margin: 8px 0 0 0;
+  color: #FEEA7E;
 }
 
-.currentConditions {
-  background-color: #f3f3f3;
-  margin-bottom: 30px;
-  border: 8px solid #1b7db9;
+.locationBackground {
+  background-color: #4C4C4C;
+}
+
+.errorHandling {
+  margin: 5px;
+  color: transparent;
+  font-size: 0.1rem;
+  -webkit-transition: all 1200ms ease-out;
+  transition: all 1200ms ease-out;
+}
+.errorHandling span {
+  display: block;
+}
+
+.visuallyShow {
+  color: white;
+  font-size: 1rem;
 }
 
 .flexContainer {
