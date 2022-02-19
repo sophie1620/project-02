@@ -333,9 +333,8 @@ h1 span {
 /* loading page styling */
 .displayLoading {
   height: 100%;
-  border: 1px solid green;
   width: 100%;
-  background-color: #f3f3f3;
+  background-color: #20B5D8;
   display: none;
   z-index: 10;
   position: absolute;
