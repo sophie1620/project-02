@@ -16,14 +16,13 @@ position: relative;
 /* form */
 form {
      // border: 1px solid red;
-     min-height: 25vh;
      margin: 0 auto;
-     padding: 20% 15%;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
 
      label {
           text-align: center;
-          display: flex;
-          justify-content: center;
 
      }
 
@@ -31,22 +30,40 @@ form {
           width: 235px;
           margin: 20px 0;
      }
+
+     button {
+          width: 235px;
+     }
 }
 
 
 /////// WHAT TO WEAR ///////////
 .whatToWear {
      margin-bottom: 30px;
-     // width: 50%;
+     width: 50%;
 
-     // li {
-     //      // border: 1px solid green;
-     //      width: 80%;
-     //      margin: 0 auto;
-     // }
      ul {
-     padding: 1px 0 15px 5%;
+     padding: 15px;
+     margin: 0 auto;
+     // border: 1px solid rebeccapurple;
+
+          li {
+               width: 50%;
+               // border: 1px solid red;
+               margin: 0 auto;
+          }
+
+          h3 {
+                    text-align: center;
+                    // border: 1px solid blue;
+                    margin: 0 auto;
+               }
      }
+}
+
+.clothingContainerStylinging {
+     background-color: #FFFBE3;
+     border: 8px solid #1B7DB9;
 }
 
 
