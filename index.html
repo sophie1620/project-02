@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- link to styles.css -->
+
+    <!-- link to Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Libre+Baskerville&family=Red+Hat+Display:wght@300;600&display=swap"
-        rel="stylesheet">
+    href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Libre+Baskerville&family=Red+Hat+Display:wght@300;600&display=swap"
+    rel="stylesheet">
+
+    <!-- link to styles.css -->
     <link rel="stylesheet" href="./styles/style.css">
     <title>Weather to Run or Not</title>    
     
@@ -17,11 +20,13 @@
 
 <body>
     <header>
-        <h1>Weather to Run or Not</h1>
+        <div class="wrapper">
+        <h1>Weather to Run <span>or Not</span></h1>
+        </div>
     </header>
 
     <main>
-        <section class="whereToRun">
+        <section class="whereToRun wrapper">
             <form action="">
                 <label for="location">Where are you running?</label>
                 <input id="location" type="text" placeholder="Toronto, ON">
@@ -38,33 +43,31 @@
                 <div id="loadingAnimation" class="loadingAnimation"></div>
             </div> <!-- end of displayLoading -->
 
-            <div class="location">
+            <div class="location wrapper">
                 <h3></h3>
                 <p class="errorHandling">Not the right city? Try specifying your state/province or country as well</p>
             </div> <!-- end of location -->
             
             <div class="results">
 
-                <div class="currentConditions">
-                    <div class"flexContainer">
-                        <div class="forecastHighlights">
-                            
-                        </div>
+                <div class="currentConditions wrapper">
+                    <div class="flexContainer wrapper">
                         <div class="iconContainer">
-
+                            <!-- icon goes here -->
                         </div>
-                    </div>
-                    <!-- image and feelsLike go here -->
-                    <!-- <div id="iconContainer" class="iconContainer">
-                        <img src="" alt=""> -->
-                        <!-- </div> -->
-                    <ul class="additionalInfo">
+                        <div class="forecastHighlights">
+                            <!-- feelsLike goes here -->
+                        </div>
+                    </div> <!-- flex container ends -->
+
+                    <ul class="additionalInfo wrapper">
                         <!-- more weather info goes here -->
-                    </ul>    
+                    </ul>
+
                 </div> <!-- end of currentConditions -->
                 
-                <div class="whatToWear">
-                    <ul class="clothingItems">
+                <div class="whatToWear wrapper">
+                    <ul class="clothingItems wrapper">
                         <!-- clothing array goes here -->
                     </ul>
                 </div> <!-- end of whatToWear -->

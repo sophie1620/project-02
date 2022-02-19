@@ -1,18 +1,96 @@
-.response{
+
+.response {
 // border: 2px solid red;
 min-height: 60vh;
 position: relative;
 }
 
-
-
-
-// this is the class to use to hide the 'not the right city?'
-.errorHandling{
+/* this is the class to use to hide the 'not the right city?' */
+.errorHandling {
      color:white;
 }
 
-
 .visuallyShow {
           color:black;
+}
+/* form */
+form {
+     border: 1px solid red;
+     min-height: 25vh;
+     margin: 0 auto;
+     padding: 20% 15%;
+}
+
+
+/////// WHAT TO WEAR ///////////
+
+
+.whatToWear {
+     // border: 1px solid red;
+     background-color: #fffbe3;
+     margin-bottom: 30px;
+     // width: 50%;
+
+     // li {
+     //      // border: 1px solid green;
+     //      width: 80%;
+     //      margin: 0 auto;
+     // }
+     ul {
+     padding: 1px 0 15px 5%;
      }
+}
+
+
+
+
+////// WEATHER RESULTS SECTION //////
+
+.location {
+     margin-bottom: 30px;
+}
+
+.currentConditions {
+     background-color: $sectionsBackground;
+     margin-bottom:30px;
+     border: 8px solid #1b7db9;
+}
+
+.flexContainer {
+     display:flex;
+     justify-content: space-between;
+     // border: 2px solid red;
+     padding-top: 15px;
+}
+
+.iconContainer {
+     // border: 2px solid yellow;
+     width: 60%;
+     img {
+          width: 100%;
+          max-width: 300px;
+     }
+}
+
+.forecastHighlights {
+     // border:2px solid yellow;
+     width: 40%;
+     display:flex;
+     flex-direction: column;
+     justify-content: center;
+     padding-left: 15px;
+     h2{
+          margin: 10px 0;
+     }
+     span {
+          display:block;
+          margin: 5px 0;
+     }
+     h4 {
+          margin: 0;
+     }
+}
+
+.additionalInfo {
+     padding: 15px 0 15px 5%;
+}
