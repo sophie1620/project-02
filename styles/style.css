@@ -263,10 +263,16 @@ label {
   font-size: 1rem;
   font-family: "Red Hat Display";
   line-height: 1.4;
+  color: #4C4C4C;
+}
+
+label {
+  color: black;
 }
 
 button {
   font-family: "Quando";
+  color: #4C4C4C;
 }
 
 body {
