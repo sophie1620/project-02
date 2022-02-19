@@ -303,7 +303,6 @@ button {
 
 img {
   display: block;
-  max-width: 100%;
 }
 
 ul {
@@ -315,14 +314,37 @@ ul li {
 }
 
 header {
-  background-color: #4C4C4C;
-  padding: 45px 0;
+  position: relative;
+}
+header .greycurve {
   border-bottom-right-radius: 40%;
+  max-width: 1100px;
+  background-color: #4C4C4C;
+  height: 250px;
+  padding: 45px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+header .greycurve img {
+  border: 2px solid red;
+  max-width: 220%;
+  position: absolute;
+  bottom: 0;
+  left: -5%;
 }
 
 h1 {
   color: #FEEA7E;
   text-align: center;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  z-index: 10;
 }
 h1 span {
   font-size: 2.5rem;
@@ -426,11 +448,6 @@ form button {
   text-align: center;
   margin: 0 auto;
   padding-bottom: 15px;
-}
-
-.clothingContainerStylinging {
-  background-color: #FFFBE3;
-  border: 8px solid #1B7DB9;
 }
 
 /* this is the class to use to hide the 'not the right city?' */
