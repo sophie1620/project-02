@@ -1,21 +1,25 @@
 header {
      position:relative;
+     max-width:100%;
      .greycurve {
           // border-bottom-right-radius: 400px; 
           border-bottom-right-radius: 40%;
           max-width: 1100px;
           background-color: $bodyTextColour;
-          height: 270px;
+          height: 300px;
           padding: 45px 0;
           display:flex;
           align-items: center;
-          img {
-               border: 2px solid red;
-               // max-width:230%;
+          div {
+               // border: 2px solid red;
                width: 100%;
                position:absolute;
                bottom: 0;
-               left: -5%;
+               left: -10%;
+               overflow:hidden;
+               img {
+                    width: 280%;
+               }
           }
      }
 }

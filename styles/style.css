@@ -317,12 +317,13 @@ ul li {
 
 header {
   position: relative;
+  max-width: 100%;
 }
 header .greycurve {
   border-bottom-right-radius: 40%;
   max-width: 1100px;
   background-color: #4C4C4C;
-  height: 270px;
+  height: 300px;
   padding: 45px 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -331,12 +332,15 @@ header .greycurve {
       -ms-flex-align: center;
           align-items: center;
 }
-header .greycurve img {
-  border: 2px solid red;
+header .greycurve div {
   width: 100%;
   position: absolute;
   bottom: 0;
-  left: -5%;
+  left: -10%;
+  overflow: hidden;
+}
+header .greycurve div img {
+  width: 280%;
 }
 
 h1 {
@@ -401,7 +405,7 @@ h1 span {
 }
 
 .response {
-  min-height: 28vh;
+  min-height: 35vh;
   position: relative;
 }
 
