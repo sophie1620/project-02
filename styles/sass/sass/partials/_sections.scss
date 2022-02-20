@@ -7,10 +7,12 @@ position: relative;
 
 // class to add to the sections when called
 .sectionsBackground {
+     // background-image:linear-gradient(to bottom, $sectionsBackground, $bodyTextColour);
      background-color: $sectionsBackground;
      border-radius: 40px;
      margin-bottom:30px;
      border: 20px solid $sectionsBorder;
+     box-shadow: 5px 5px 8px $bodyTextColour;
 }
 
 
@@ -84,6 +86,7 @@ form {
      display:flex;
      flex-direction:column;
      align-items: center;
+     border-radius: 30px;
      h3 {
           margin: 8px 0 0 0;
           padding: 0 10px;
