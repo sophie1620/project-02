@@ -90,6 +90,24 @@
     }
      //form
      //i think we fiddle with the form here too! put the input and button side by side - thoughts?
+    form {
+
+        label {
+            margin-bottom: 15px;
+        }
+
+        div {
+            flex-direction: row;
+            // border: 1px solid red;
+            width: 550px;
+            justify-content: space-between;
+
+            button {
+                // height: 1.5rem;
+                width: 300px;
+            }
+        }
+    }
 
 
      //results sections

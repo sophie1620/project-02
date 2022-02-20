@@ -33,8 +33,10 @@
         <section class="whereToRun wrapper">
             <form action="">
                 <label for="location">Where are you running?</label>
-                <input id="location" type="text" placeholder="Toronto, ON">
-                <button type="submit">Check Your Forecast!</button>
+                <div>
+                    <input id="location" type="text" placeholder="Toronto, ON">
+                    <button type="submit">Check Your Forecast!</button>
+                </div>
             </form>
             
         </section>
@@ -44,7 +46,9 @@
             <!-- div for loading and have something -->
             <div id="displayLoading" class="displayLoading">
                 <!-- div for loading animation -->
-                <div id="loadingAnimation" class="loadingAnimation"></div>
+                <div id="loadingAnimation" class="loadingAnimation">
+                    <div class="innerLoading"></div>
+                </div>
             </div> <!-- end of displayLoading -->
 
             <div class="location wrapper">

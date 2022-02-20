@@ -24,25 +24,31 @@ form {
      flex-direction: column;
      align-items: center;
 
-     input {
-          width: 235px;
-          margin: 20px 0;
-          padding: 10px;
-     }
-
-     button {
-          width: 235px;
-          border: 5px solid $accent;
-          box-shadow: 5px 5px 8px $bodyTextColour;
-
-          &:hover {
-               border: 5px solid #ffb36a;
-               transition: 1s;
+     div {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          
+          input {
+               width: 235px;
+               margin: 20px 0;
+               padding: 10px;
           }
-
-          &:focus {
-               border: 5px solid #ffb36a;
-               box-shadow: none;
+          
+          button {
+               width: 235px;
+               border: 5px solid $accent;
+               box-shadow: 5px 5px 8px $bodyTextColour;
+               
+               &:hover {
+                    border: 5px solid #ffb36a;
+                    transition: 1s;
+               }
+               
+               &:focus {
+                    border: 5px solid #ffb36a;
+                    box-shadow: none;
+               }
           }
      }
 }

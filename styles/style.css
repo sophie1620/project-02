@@ -380,10 +380,23 @@ h1 span {
   top: calc(50% - 100px);
   left: calc(50% - 100px);
   border-radius: 50%;
-  border: 25px solid #FEEA7E;
-  border-top: 26px solid #f3f3f3;
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(25%, #FEEA7E), color-stop(0.05, #f3f3f3));
+  background-image: linear-gradient(0deg, #FEEA7E 25%, #f3f3f3 0.05 95%);
   -webkit-animation: spin 1s infinite linear;
           animation: spin 1s infinite linear;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.displayLoading .loadingAnimation .innerLoading {
+  width: 160px;
+  height: 160px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background-color: #20B5D8;
 }
 @-webkit-keyframes spin {
   from {
@@ -437,23 +450,35 @@ form {
       -ms-flex-align: center;
           align-items: center;
 }
-form input {
+form div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+form div input {
   width: 235px;
   margin: 20px 0;
   padding: 10px;
 }
-form button {
+form div button {
   width: 235px;
   border: 5px solid #FEEA7E;
   -webkit-box-shadow: 5px 5px 8px #4C4C4C;
           box-shadow: 5px 5px 8px #4C4C4C;
 }
-form button:hover {
+form div button:hover {
   border: 5px solid #ffb36a;
   -webkit-transition: 1s;
   transition: 1s;
 }
-form button:focus {
+form div button:focus {
   border: 5px solid #ffb36a;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -686,6 +711,23 @@ footer p a {
   .greycurve div img {
     width: 100%;
     max-width: 1200px;
+  }
+
+  form label {
+    margin-bottom: 15px;
+  }
+  form div {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    width: 550px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  form div button {
+    width: 300px;
   }
 
   .results {
