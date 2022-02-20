@@ -270,6 +270,7 @@ label {
   color: black;
   text-align: center;
   font-size: 1.2rem;
+  font-family: "Quando";
 }
 
 button {
@@ -369,6 +370,8 @@ h1 span {
   display: none;
   z-index: 10;
   position: absolute;
+  -webkit-transition: 2s;
+  transition: 2s;
 }
 .displayLoading .loadingAnimation {
   width: 200px;
@@ -441,6 +444,19 @@ form input {
 }
 form button {
   width: 235px;
+  border: 5px solid #FEEA7E;
+  -webkit-box-shadow: 5px 5px 8px #4C4C4C;
+          box-shadow: 5px 5px 8px #4C4C4C;
+}
+form button:hover {
+  border: 5px solid #ffb36a;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+form button:focus {
+  border: 5px solid #ffb36a;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .whatToWear {
@@ -517,13 +533,16 @@ form button {
 
 .errorHandling {
   margin: 5px;
-  color: transparent;
   font-size: 0.1rem;
   -webkit-transition: all 1200ms ease-out;
   transition: all 1200ms ease-out;
 }
 .errorHandling span {
   display: block;
+}
+
+.displayNone {
+  display: none;
 }
 
 .visuallyShow {
@@ -595,7 +614,6 @@ footer p a {
   font-weight: 600;
 }
 
-/* need to change the header image sizing so that it looks good visually in the mobile version.  For web, we can set it to be 100% width */
 @media (min-width: 480px) {
   .greycurve div {
     left: -7%;
