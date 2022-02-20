@@ -312,16 +312,17 @@ ul {
 }
 ul li {
   list-style: square;
-  line-height: 1.8rem;
+  line-height: 1.2;
 }
 
 header {
   position: relative;
-  max-width: 100%;
+  overflow: hidden;
 }
-header .greycurve {
+
+.greycurve {
   border-bottom-right-radius: 40%;
-  max-width: 1100px;
+  max-width: 1200px;
   background-color: #4C4C4C;
   height: 300px;
   padding: 45px 0;
@@ -332,15 +333,16 @@ header .greycurve {
       -ms-flex-align: center;
           align-items: center;
 }
-header .greycurve div {
+.greycurve div {
   width: 100%;
   position: absolute;
   bottom: 0;
   left: -10%;
+  width: 110%;
   overflow: hidden;
 }
-header .greycurve div img {
-  width: 280%;
+.greycurve div img {
+  width: 270%;
 }
 
 h1 {
@@ -351,6 +353,7 @@ h1 {
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   z-index: 10;
+  width: 90%;
 }
 h1 span {
   font-size: 2.5rem;
@@ -411,8 +414,9 @@ h1 span {
 
 .sectionsBackground {
   background-color: #f3f3f3;
+  border-radius: 40px;
   margin-bottom: 30px;
-  border: 8px solid #1b7db9;
+  border: 20px solid #1ba3c2a2;
 }
 
 form {
@@ -439,7 +443,7 @@ form button {
 
 .whatToWear {
   margin-bottom: 30px;
-  max-width: 450px;
+  max-width: 470px;
 }
 .whatToWear .clothingFlexContainer {
   display: -webkit-box;
@@ -525,7 +529,7 @@ form button {
 }
 
 .currentConditions {
-  max-width: 450px;
+  max-width: 470px;
 }
 .currentConditions .flexContainer {
   display: -webkit-box;
@@ -589,3 +593,68 @@ footer p a {
 }
 
 /* need to change the header image sizing so that it looks good visually in the mobile version.  For web, we can set it to be 100% width */
+@media (min-width: 480px) {
+  .greycurve div {
+    left: -7%;
+    width: 107%;
+  }
+  .greycurve div img {
+    width: 220%;
+  }
+
+  h2 {
+    font-size: 2.3rem;
+  }
+
+  li {
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
+}
+@media (min-width: 560px) {
+  h1 {
+    font-size: 4.2rem;
+    top: 25%;
+  }
+
+  .greycurve {
+    height: 350px;
+  }
+  .greycurve div {
+    bottom: -50px;
+  }
+  .greycurve div img {
+    width: 180%;
+  }
+}
+@media (min-width: 750px) {
+  h1 {
+    font-size: 5rem;
+  }
+  h1 span {
+    font-size: 3rem;
+  }
+
+  .greycurve {
+    border-bottom-right-radius: 300px;
+  }
+  .greycurve div {
+    left: -4%;
+    width: 104%;
+    bottom: -40px;
+  }
+  .greycurve div img {
+    width: 160%;
+  }
+}
+@media (min-width: 1100px) {
+  .results {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}

@@ -3,3 +3,81 @@
 // break point at 830px for the header image? 
 
 // break point at 1200px to flex the .results div so that they sit beside each other
+
+
+///// MIN HEIGHT 490PX //////
+@media(min-width: 480px){
+     //header
+     .greycurve {
+          div {
+               left: -7%;
+               width: 107%;
+               img {
+                    width: 220%;
+               }
+          }
+     }
+     //results sections
+     h2 {
+          font-size: 2.3rem;
+     }
+     li {
+          font-size: 1.5rem;
+          line-height: 1.2;
+     }
+     
+}
+
+////// MIN HEIGHT 560PX ////////
+@media(min-width: 560px) {
+     //header
+     h1 {
+          font-size: 4.2rem;
+          top: 25%;
+     }
+     .greycurve {
+          height:350px;
+          div {
+               bottom: -50px;
+               img {
+                    width: 180%;
+               }
+          }
+     }
+}
+
+/////// MIN HEIGHT 750PX ////////
+@media(min-width: 750px){
+     //header
+     h1{
+          font-size: 5rem;
+          span {
+               font-size:3rem;
+          }
+     }
+     .greycurve {
+          border-bottom-right-radius: 300px; 
+          div {
+               left:-4%;
+               width: 104%;
+               bottom:-40px;
+               img {
+                    width: 160%;
+               }
+          }
+     }
+}
+
+///////// MIN HEIGHT 1100PX ///////
+@media(min-width: 1100px){
+     //form
+     //i think we fiddle with the form here too! put the input and button side by side - thoughts?
+
+
+     //results sections
+     .results {
+          display: flex;
+          flex-direction:row;
+     }
+     
+}

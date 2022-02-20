@@ -8,8 +8,9 @@ position: relative;
 // class to add to the sections when called
 .sectionsBackground {
      background-color: $sectionsBackground;
+     border-radius: 40px;
      margin-bottom:30px;
-     border: 8px solid #1b7db9;
+     border: 20px solid $sectionsBorder;
 }
 
 
@@ -36,7 +37,7 @@ form {
 /////// WHAT TO WEAR ///////////
 .whatToWear {
      margin-bottom: 30px;
-     max-width: 450px;
+     max-width: 470px;
      .clothingFlexContainer {
           display:flex;
           flex-direction:row;
@@ -113,7 +114,7 @@ form {
 }
 
 .currentConditions {
-     max-width: 450px;
+     max-width: 470px;
      .flexContainer {
           display:flex;
           justify-content: space-between;

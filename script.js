@@ -166,7 +166,7 @@ weatherApp.getWeather = function(locationParameter){
      })
      //parse information into json
      .then((jsonResponse) => {
-          // console.log(jsonResponse);
+          console.log(jsonResponse);
           weatherApp.displayLocation(jsonResponse.resolvedAddress);
           weatherApp.displayWeather(jsonResponse.currentConditions);
           weatherApp.displayIcon(jsonResponse.currentConditions.icon);
@@ -260,7 +260,7 @@ weatherApp.displayIcon = function(icon){
      } else if (icon === "partly-cloudy-day") {
           masterpiece.src = weatherIcons[5]
           iconContainer.appendChild(masterpiece);
-     } else if (icon === "clear"){
+     } else if (icon === "clear-day"){
           masterpiece.src = weatherIcons[6]
           iconContainer.appendChild(masterpiece);
      }  else {
