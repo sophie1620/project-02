@@ -19,7 +19,7 @@
           left: calc(50% - 100px);
           border-radius: 50%;
           // border: 25px solid $accent;
-          background-image: linear-gradient(0deg, $accent 25%, $sectionsBackground.05 95%);
+          background-image: linear-gradient(0deg, $accent 25%, $lightSectionsBg 95%);
           // border-top: 26px solid  $sectionsBackground;
           animation: spin 1s infinite linear;
           display: flex;

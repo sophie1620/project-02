@@ -380,8 +380,8 @@ h1 span {
   top: calc(50% - 100px);
   left: calc(50% - 100px);
   border-radius: 50%;
-  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(25%, #FEEA7E), color-stop(0.05, #f3f3f3));
-  background-image: linear-gradient(0deg, #FEEA7E 25%, #f3f3f3 0.05 95%);
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(25%, #FEEA7E), color-stop(95%, #f3f3f366));
+  background-image: linear-gradient(0deg, #FEEA7E 25%, #f3f3f366 95%);
   -webkit-animation: spin 1s infinite linear;
           animation: spin 1s infinite linear;
   display: -webkit-box;
@@ -725,9 +725,17 @@ footer p a {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  form div input {
+    width: 270px;
   }
   form div button {
-    width: 300px;
+    width: 270px;
+    font-size: 0.8rem;
+    padding: 10px;
   }
 
   .results {
