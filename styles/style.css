@@ -473,15 +473,16 @@ form div button {
   -webkit-box-shadow: 5px 5px 8px #4C4C4C;
           box-shadow: 5px 5px 8px #4C4C4C;
 }
-form div button:hover {
+form div button:hover, form div button:focus {
   border: 5px solid #ffb36a;
   -webkit-transition: 1s;
   transition: 1s;
 }
-form div button:focus {
-  border: 5px solid #ffb36a;
+form div button:active {
   -webkit-box-shadow: none;
           box-shadow: none;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 .whatToWear {

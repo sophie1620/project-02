@@ -40,14 +40,15 @@ form {
                border: 5px solid $accent;
                box-shadow: 5px 5px 8px $bodyTextColour;
                
-               &:hover {
+               &:hover, 
+               &:focus {
                     border: 5px solid #ffb36a;
                     transition: 1s;
                }
-               
-               &:focus {
-                    border: 5px solid #ffb36a;
+
+               &:active {
                     box-shadow: none;
+                    transition: 1s;
                }
           }
      }
@@ -105,6 +106,7 @@ form {
      flex-direction:column;
      align-items: center;
      border-radius: 30px;
+
      h3 {
           margin: 8px 0 0 0;
           padding: 0 10px;
