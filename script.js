@@ -297,8 +297,7 @@ weatherApp.selectClothingList = function(outfitParameter) {
           const listedItem = document.createElement('li');
           listedItem.textContent = item;
           ulClothingElement.append(listedItem);
-     }) 
-
+     })
 } //end of selectClothingList function
 
 
