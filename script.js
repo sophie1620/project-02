@@ -185,6 +185,7 @@ weatherApp.displayLocation = function(locationData){
      location.textContent = locationData;
      //add visual prompt to user if information is wrong
      const locationError = document.querySelector('.location p');
+     console.log(locationError);
      locationError.classList.remove("displayNone");
      locationError.classList.add("visuallyShow");
      //add background colour to section
