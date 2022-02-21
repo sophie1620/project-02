@@ -1,25 +1,28 @@
 ///// MIN HEIGHT 490PX //////
 @media(min-width: 480px){
      //header
-    .greycurve {
-        div {
-            left: -7%;
-            width: 107%;
-            img {
-                width: 220%;
-            }
-        }
-    }
+     .greycurve {
+          div {
+               left: -7%;
+               width: 107%;
+               img {
+                    width: 220%;
+               }
+          }
+     }
      //results sections
-    h2 {
-        font-size: 2.3rem;
-    }
+     h2 {
+          font-size: 2.3rem;
+          span {
+              font-size:2rem;
+          }
+     }
 
-    li {
-        font-size: 1.5rem;
-        line-height: 1.2;
-    }
-}
+     li {
+          font-size: 1.5rem;
+          line-height: 1.2;
+     }
+     }
 
 ////// MIN HEIGHT 560PX ////////
 @media(min-width: 560px) {

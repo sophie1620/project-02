@@ -21,7 +21,7 @@ const runningAttire = [
           'Neck cover',
           'Gloves', 
           'Mittens', 
-          'Long sleeves',
+          'Long sleeve',
           'Vest',
           'Jacket',
           'Leggings', 

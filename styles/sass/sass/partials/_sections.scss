@@ -65,10 +65,12 @@ form {
           align-items: center;
 
           img {
-               width: 35%;
+               width: 50%;
                max-width:170px; 
                padding-top: 15px;
-               margin-right: 25px;
+          }
+          h2 {
+               padding-left: 25px;
           }
      }
      ul {
@@ -92,7 +94,7 @@ form {
 
 .column {
      column-count: 2;
-     column-gap: 0;
+     column-gap: 1;
      // border: 1px solid green
 }
 
@@ -151,7 +153,7 @@ form {
 
 
 .iconContainer {
-     width: 60%;
+     width: 55%;
 
      img {
           width: 100%;
@@ -162,6 +164,7 @@ form {
 .forecastHighlights {
      width: 40%;
      display:flex;
+     flex-wrap:wrap;
      flex-direction: column;
      justify-content: center;
      padding-left: 15px;

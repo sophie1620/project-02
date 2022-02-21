@@ -245,6 +245,9 @@ h2 {
   font-size: 2rem;
   font-family: "Red Hat Display";
 }
+h2 span {
+  font-size: 1.7rem;
+}
 
 h3 {
   font-size: 1.6rem;
@@ -501,10 +504,12 @@ form div button:focus {
           align-items: center;
 }
 .whatToWear .clothingFlexContainer img {
-  width: 35%;
+  width: 50%;
   max-width: 170px;
   padding-top: 15px;
-  margin-right: 25px;
+}
+.whatToWear .clothingFlexContainer h2 {
+  padding-left: 25px;
 }
 .whatToWear ul {
   padding: 15px;
@@ -524,9 +529,9 @@ form div button:focus {
   -webkit-column-count: 2;
      -moz-column-count: 2;
           column-count: 2;
-  -webkit-column-gap: 0;
-     -moz-column-gap: 0;
-          column-gap: 0;
+  -webkit-column-gap: 1;
+     -moz-column-gap: 1;
+          column-gap: 1;
 }
 
 /* this is the class to use to hide the 'not the right city?' */
@@ -589,7 +594,7 @@ form div button:focus {
 }
 
 .iconContainer {
-  width: 60%;
+  width: 55%;
 }
 .iconContainer img {
   width: 100%;
@@ -601,6 +606,8 @@ form div button:focus {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -650,6 +657,9 @@ footer p a {
 
   h2 {
     font-size: 2.3rem;
+  }
+  h2 span {
+    font-size: 2rem;
   }
 
   li {
