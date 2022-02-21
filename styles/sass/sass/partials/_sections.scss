@@ -1,7 +1,6 @@
 
 .response {
 min-height: 35vh;
-// min-height: 28vh;
 position: relative;
 }
 
@@ -59,6 +58,7 @@ form {
 .whatToWear {
      margin-bottom: 30px;
      max-width: 470px;
+     // border: 1px solid red;
 
      .clothingFlexContainer {
           display:flex;
@@ -88,6 +88,12 @@ form {
                margin: 0 auto;
                padding-bottom: 15px;
           }
+     }
+
+     .treadmillRec {
+          margin: 15px;
+          color: maroon;
+          font-size: 0.8rem;
      }
 }
 
