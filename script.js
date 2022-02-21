@@ -242,6 +242,7 @@ weatherApp.displayIcon = function(icon){
      iconContainer.innerHTML = "";
      
      const masterpiece = document.createElement('img');
+     masterpiece.alt = "";
      //if/else statements to know which image to append
      if (icon === "cloudy"){
           masterpiece.src = weatherIcons[0]
@@ -285,6 +286,7 @@ weatherApp.selectClothingList = function(outfitParameter) {
      clothingFlexContainer.innerHTML = "";
 
      const footprints = document.createElement('img');
+     footprints.alt = "";
      footprints.src="./assets/shoesPink.png";
      const runningOutfits = document.createElement('h2')
      runningOutfits.textContent = "What to Wear";
