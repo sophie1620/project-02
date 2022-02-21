@@ -427,7 +427,7 @@ h1 span {
 }
 
 .response {
-  min-height: 35vh;
+  min-height: 24vh;
   position: relative;
 }
 
@@ -523,8 +523,12 @@ form div button:active {
 }
 .whatToWear ul li {
   width: 120px;
-  border: 1px solid red;
   margin: 0 auto;
+}
+.whatToWear .treadmillRec {
+  margin: 15px;
+  color: maroon;
+  font-size: 0.8rem;
 }
 
 .column {
