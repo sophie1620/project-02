@@ -383,8 +383,8 @@ h1 span {
   top: calc(50% - 100px);
   left: calc(50% - 100px);
   border-radius: 50%;
-  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(25%, #FEEA7E), color-stop(0.05, #f3f3f3));
-  background-image: linear-gradient(0deg, #FEEA7E 25%, #f3f3f3 0.05 95%);
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(25%, #FEEA7E), color-stop(95%, #f3f3f366));
+  background-image: linear-gradient(0deg, #FEEA7E 25%, #f3f3f366 95%);
   -webkit-animation: spin 1s infinite linear;
           animation: spin 1s infinite linear;
   display: -webkit-box;
@@ -476,15 +476,16 @@ form div button {
   -webkit-box-shadow: 5px 5px 8px #4C4C4C;
           box-shadow: 5px 5px 8px #4C4C4C;
 }
-form div button:hover {
+form div button:hover, form div button:focus {
   border: 5px solid #ffb36a;
   -webkit-transition: 1s;
   transition: 1s;
 }
-form div button:focus {
-  border: 5px solid #ffb36a;
+form div button:active {
   -webkit-box-shadow: none;
           box-shadow: none;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 .whatToWear {
@@ -515,14 +516,15 @@ form div button:focus {
   padding: 15px;
   margin: 0 auto;
 }
-.whatToWear ul li {
-  width: 120px;
-  margin: 0 auto;
-}
 .whatToWear ul h3 {
   text-align: center;
   margin: 0 auto;
   padding-bottom: 15px;
+}
+.whatToWear ul li {
+  width: 120px;
+  border: 1px solid red;
+  margin: 0 auto;
 }
 
 .column {
@@ -735,9 +737,17 @@ footer p a {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  form div input {
+    width: 270px;
   }
   form div button {
-    width: 300px;
+    width: 270px;
+    font-size: 0.8rem;
+    padding: 10px;
   }
 
   .results {
