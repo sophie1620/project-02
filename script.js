@@ -298,7 +298,6 @@ weatherApp.selectClothingList = function(outfitParameter) {
           listedItem.textContent = item;
           ulClothingElement.append(listedItem);
      }) 
-
 } //end of selectClothingList function
 
 
