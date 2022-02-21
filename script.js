@@ -242,6 +242,7 @@ weatherApp.displayIcon = function(icon){
      iconContainer.innerHTML = "";
      
      const masterpiece = document.createElement('img');
+     masterpiece.alt = "";
      //if/else statements to know which image to append
      if (icon === "cloudy"){
           masterpiece.src = weatherIcons[0]
@@ -285,6 +286,7 @@ weatherApp.selectClothingList = function(outfitParameter) {
      clothingFlexContainer.innerHTML = "";
 
      const footprints = document.createElement('img');
+     footprints.alt = "";
      footprints.src="./assets/shoesPink.png";
      const runningOutfits = document.createElement('h2')
      runningOutfits.textContent = "What to Wear";
@@ -332,19 +334,13 @@ weatherApp.displayClothing = function(temperature) {
 
 // extreme weather warming
 weatherApp.extremeWeather = function(temperature) {
-     // console.log('extreme weather');
      const treadmillRec = document.querySelector(".treadmillRec")
      treadmillRec.innerHTML = "";
      if(temperature < -10 || temperature > 25) {
-          // const treadmillRec = document.createElement('p');
           treadmillRec.textContent = "These are extreme weather conditions, and we recommend doing a treadmill run instead.  If you want to run outside, please dress appropriately and ensure you are hydrated."
      }
 } //end of extremeWeather function
 
-// list style changes for .clothingItems li
-weatherApp.listStyle = function(temperature) {
-     
-}
 
 //call init function
 weatherApp.init();

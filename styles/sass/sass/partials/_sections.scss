@@ -15,7 +15,6 @@ position: relative;
 
 /////// FORM /////////
 form {
-     // border: 1px solid red;
      margin: 20px auto;
      display: flex;
      flex-direction: column;
@@ -39,7 +38,7 @@ form {
                
                &:hover, 
                &:focus {
-                    border: 5px solid #ffb36a;
+                    border: 5px solid $hoverColor;
                     transition: 1s;
                }
 
@@ -77,14 +76,12 @@ form {
 
           h3 {
                text-align: center;
-               // border: 1px solid blue;
                margin: 0 auto;
                padding-bottom: 15px;
           }
           
           li {
                width: 120px;
-               // border: 1px solid red;
                margin: 0 auto;
           }
 
@@ -147,7 +144,6 @@ form {
 .displayNone {
      display: none;
 }
-
 
 .currentConditions {
      max-width: 470px;
