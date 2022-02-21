@@ -511,14 +511,15 @@ form div button:active {
   padding: 15px;
   margin: 0 auto;
 }
-.whatToWear ul li {
-  width: 120px;
-  margin: 0 auto;
-}
 .whatToWear ul h3 {
   text-align: center;
   margin: 0 auto;
   padding-bottom: 15px;
+}
+.whatToWear ul li {
+  width: 120px;
+  border: 1px solid red;
+  margin: 0 auto;
 }
 
 .column {

@@ -76,18 +76,19 @@ form {
      padding: 15px;
      margin: 0 auto;
 
-          li {
-               width: 120px;
-               // border: 1px solid red;
-               margin: 0 auto;
-          }
-
           h3 {
                text-align: center;
                // border: 1px solid blue;
                margin: 0 auto;
                padding-bottom: 15px;
           }
+          
+          li {
+               width: 120px;
+               border: 1px solid red;
+               margin: 0 auto;
+          }
+
      }
 }
 
