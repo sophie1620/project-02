@@ -14,7 +14,7 @@
 // clothing options for different temperature blocks inside our the runningAttire array
 const runningAttire = [
      {
-     title: 'extremeCold',
+     title: 'extreme cold',
      clothing: [
           'Hat', 
           'Face cover', 
@@ -76,7 +76,7 @@ const runningAttire = [
      }, 
 
      {
-     title: 'exteremeHeat',
+     title: 'extereme heat',
      clothing: [
           'Tanktop',
           'Shorts', 
@@ -166,7 +166,7 @@ weatherApp.getWeather = function(locationParameter){
      })
      //parse information into json
      .then((jsonResponse) => {
-          console.log(jsonResponse);
+          // console.log(jsonResponse);
           weatherApp.displayLocation(jsonResponse.resolvedAddress);
           weatherApp.displayWeather(jsonResponse.currentConditions);
           weatherApp.displayIcon(jsonResponse.currentConditions.icon);
@@ -231,6 +231,7 @@ weatherApp.displayWeather = function(weatherData) {
           ulWeatherElement.append(listElement);
      }
      weatherApp.displayClothing(feelsLike);
+     weatherApp.extremeWeather(feelsLike);
 } // end of displayWeather function
 
 
@@ -267,7 +268,6 @@ weatherApp.displayIcon = function(icon){
           masterpiece.src = weatherIcons[7]
           iconContainer.appendChild(masterpiece);
      }
-     
 } //end of displayIcon function
 
 
@@ -298,12 +298,14 @@ weatherApp.selectClothingList = function(outfitParameter) {
           listedItem.textContent = item;
           ulClothingElement.append(listedItem);
      }) 
+
 } //end of selectClothingList function
 
 
 ///////// DISPLAY CLOTHING FUNCTION ///////////
 // Create a method that will take the feelsLike info from displayWeather, and use that number to create if/else statements to show different clothing outfits based on the temperature
 weatherApp.displayClothing = function(temperature) {
+     // console.log('display clothing');
      if(temperature < -10) {
           // console.log(`WAH! COLD! BRR!`);
           weatherApp.selectClothingList(runningAttire[0].clothing);
@@ -328,6 +330,18 @@ weatherApp.displayClothing = function(temperature) {
           weatherApp.selectClothingList(runningAttire[5].clothing);
      }
 } // end of displayClothing function
+
+// extreme weather warming
+weatherApp.extremeWeather = function(temperature) {
+     // console.log('extreme weather');
+     const treadmillRec = document.querySelector(".treadmillRec")
+     treadmillRec.innerHTML = "";
+     if(temperature < -10 || temperature > 25) {
+          // const treadmillRec = document.createElement('p');
+          treadmillRec.textContent = "These are extreme weather conditions, and we recommend doing a treadmill run instead.  If you want to run outside, please dress appropriately and ensure you are hydrated."
+     }
+} //end of extremeWeather function
+
 
 
 //call init function

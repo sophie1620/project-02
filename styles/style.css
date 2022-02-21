@@ -516,10 +516,17 @@ form div button:active {
   margin: 0 auto;
   padding-bottom: 15px;
 }
+<<<<<<< HEAD
 .whatToWear ul li {
   width: 120px;
   border: 1px solid red;
   margin: 0 auto;
+=======
+.whatToWear .treadmillRec {
+  margin: 15px;
+  color: maroon;
+  font-size: 0.8rem;
+>>>>>>> jsStretchGoals
 }
 
 .column {
