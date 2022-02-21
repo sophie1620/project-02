@@ -1,8 +1,6 @@
-//need to set up basic font size - I am going to use REM for fonts
-//body {font-size: 125%;}
-
 body {
     background-color: $backgroundColour;
+    font-size: 125%;
 }
 
 .wrapper {
@@ -17,7 +15,7 @@ a {
     
     &:hover, 
     &:focus {
-        color:#ffb36a;
+        color: $hoverColor;
     }
 }
 
