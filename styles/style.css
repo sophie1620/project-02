@@ -237,13 +237,14 @@ html {
 
 h1 {
   font-size: 3.7rem;
-  color: #4C4C4C;
   font-family: "Bubblegum Sans";
 }
 
 h2 {
   font-size: 2rem;
-  font-family: "Red Hat Display";
+  font-family: "Quando";
+  color: white;
+  text-shadow: 1px 1px #b6a64c;
 }
 h2 span {
   font-size: 1.7rem;
@@ -256,29 +257,38 @@ h3 {
 
 h4 {
   font-size: 1rem;
-  font-family: "Quando";
+  font-family: "Red Hat Display";
+  color: #FEEA7E;
+  text-transform: uppercase;
+  line-height: 1.2;
+  letter-spacing: 1.5px;
 }
 
 li,
 p,
-input,
-label {
+input {
   font-size: 1rem;
   font-family: "Red Hat Display";
   line-height: 1.4;
   color: #4C4C4C;
 }
 
+li {
+  color: white;
+}
+
 label {
   color: black;
   text-align: center;
+  line-height: 1.4;
   font-size: 1.2rem;
   font-family: "Quando";
 }
 
 button {
-  font-family: "Quando";
+  font-family: "Red Hat Display";
   color: #4C4C4C;
+  font-weight: 600;
 }
 
 body {
@@ -401,6 +411,7 @@ h1 span {
   border-radius: 50%;
   background-color: #20B5D8;
 }
+
 @-webkit-keyframes spin {
   from {
     -webkit-transform: rotate(0deg);
@@ -411,6 +422,7 @@ h1 span {
             transform: rotate(360deg);
   }
 }
+
 @keyframes spin {
   from {
     -webkit-transform: rotate(0deg);
@@ -421,21 +433,20 @@ h1 span {
             transform: rotate(360deg);
   }
 }
-
 .display {
   display: block;
 }
 
 .response {
-  min-height: 37vh;
+  min-height: 35vh;
   position: relative;
 }
 
 .sectionsBackground {
-  background-color: #f3f3f3;
+  background-color: #4C4C4C;
   border-radius: 40px;
-  margin-bottom: 30px;
-  border: 20px solid #1ba3c2a2;
+  margin-bottom: 45px;
+  border: 20px solid #82e8ff;
   -webkit-box-shadow: 5px 5px 8px #4C4C4C;
           box-shadow: 5px 5px 8px #4C4C4C;
 }
@@ -489,7 +500,6 @@ form div button:active {
 }
 
 .whatToWear {
-  margin-bottom: 30px;
   max-width: 470px;
 }
 .whatToWear .clothingFlexContainer {
@@ -500,6 +510,9 @@ form div button:active {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -540,9 +553,9 @@ form div button:active {
           column-gap: 1;
 }
 
-/* this is the class to use to hide the 'not the right city?' */
+/* 'not the right city?' section */
 .location {
-  margin-bottom: 15px;
+  margin: 45px auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -569,6 +582,7 @@ form div button:active {
 
 .errorHandling {
   margin: 5px;
+  color: transparent;
   font-size: 0.1rem;
   -webkit-transition: all 1200ms ease-out;
   transition: all 1200ms ease-out;
@@ -577,13 +591,13 @@ form div button:active {
   display: block;
 }
 
-.displayNone {
-  display: none;
-}
-
 .visuallyShow {
   color: white;
   font-size: 1rem;
+}
+
+.displayNone {
+  display: none;
 }
 
 .currentConditions {

@@ -287,7 +287,7 @@ weatherApp.selectClothingList = function(outfitParameter) {
      const footprints = document.createElement('img');
      footprints.src="./assets/shoesPink.png";
      const runningOutfits = document.createElement('h2')
-     runningOutfits.textContent = "What to wear";
+     runningOutfits.textContent = "What to Wear";
      clothingFlexContainer.append(footprints);
      clothingFlexContainer.append(runningOutfits);
 

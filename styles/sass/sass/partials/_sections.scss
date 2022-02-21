@@ -1,17 +1,15 @@
-
 .response {
-min-height: 37vh;
+min-height: 35vh;
 position: relative;
 }
 
 // class to add to the sections when called
 .sectionsBackground {
-     // background-image:linear-gradient(to bottom, $sectionsBackground, $bodyTextColour);
-     background-color: $sectionsBackground;
+     background-color: $secondaryBackground;
      border-radius: 40px;
-     margin-bottom:30px;
-     border: 20px solid $sectionsBorder;
-     box-shadow: 5px 5px 8px $bodyTextColour;
+     margin-bottom:45px;
+     border: 20px solid  #82e8ff;
+     box-shadow: 5px 5px 8px $secondaryBackground;
 }
 
 
@@ -37,7 +35,7 @@ form {
           button {
                width: 235px;
                border: 5px solid $accent;
-               box-shadow: 5px 5px 8px $bodyTextColour;
+               box-shadow: 5px 5px 8px $secondaryBackground;
                
                &:hover, 
                &:focus {
@@ -56,13 +54,12 @@ form {
 
 /////// WHAT TO WEAR ///////////
 .whatToWear {
-     margin-bottom: 30px;
      max-width: 470px;
-     // border: 1px solid red;
 
      .clothingFlexContainer {
           display:flex;
           flex-direction:row;
+          justify-content: space-between;
           align-items: center;
 
           img {
@@ -103,14 +100,13 @@ form {
 .column {
      column-count: 2;
      column-gap: 1;
-     // border: 1px solid green
 }
 
 ////// WEATHER RESULTS SECTION //////
 
-/* this is the class to use to hide the 'not the right city?' */
+/* 'not the right city?' section */
 .location{
-     margin-bottom: 15px;
+     margin: 45px auto;
      display:flex;
      flex-direction:column;
      align-items: center;
@@ -126,13 +122,13 @@ form {
 
 // class to add to the location section 
 .locationBackground {
-     background-color: $bodyTextColour;
+     background-color: $secondaryBackground;
      max-width:450px;
 }
 
 .errorHandling {
      margin: 5px;
-     // color:transparent;
+     color:transparent;
      font-size: 0.1rem;
      transition: all 1200ms ease-out;
 
@@ -142,14 +138,16 @@ form {
 
 }
 
-.displayNone {
-     display: none;
-}
-
+//transition to hide error handling p after on page for 5s
 .visuallyShow {
      color:white; 
      font-size: 1rem;
 }
+//class to remove when showing the error handling p upon search
+.displayNone {
+     display: none;
+}
+
 
 .currentConditions {
      max-width: 470px;
@@ -160,10 +158,8 @@ form {
      }
 }
 
-
 .iconContainer {
      width: 55%;
-
      img {
           width: 100%;
           max-width: 300px;

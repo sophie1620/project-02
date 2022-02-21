@@ -18,13 +18,11 @@
           top: calc(50% - 100px);
           left: calc(50% - 100px);
           border-radius: 50%;
-          // border: 25px solid $accent;
           background-image: linear-gradient(0deg, $accent 25%, $lightSectionsBg 95%);
-          // border-top: 26px solid  $sectionsBackground;
           animation: spin 1s infinite linear;
           display: flex;
           align-items: center;
-
+     
           .innerLoading {
                width: 160px;
                height: 160px;
@@ -33,14 +31,14 @@
                background-color: $backgroundColour;
           }
      }
+}
 
-     @keyframes spin {
-          from {
-               transform: rotate(0deg);
-          }
-          to {
-               transform: rotate(360deg);
-          }
+@keyframes spin {
+     from {
+          transform: rotate(0deg);
+     }
+     to {
+          transform: rotate(360deg);
      }
 }
 
